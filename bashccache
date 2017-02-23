@@ -9,9 +9,9 @@ then
 #for other installs (local setup)
 elif [ -d /usr/lib/ccache ]
 then
-	if [ -d /home/mnaveau ]
+	if [ -d $HOME/.ccache ]
 	then
-		export CCACHE_DIR=/home/mnaveau/.ccache
+		export CCACHE_DIR=$HOME/.ccache
 	fi
         export PATH=/usr/lib/ccache:$PATH
         export CCACHE_SLOPPINESS=file_macro,time_macros
