@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#for osx
+if [ -d /usr/local/opt/ccache/libexec ]
+then
+	export PATH=/usr/local/opt/ccache/libexec:$PATH
+        export CCACHE_SLOPPINESS=file_macro,time_macros
+
+#for other installs (local setup)
+elif [ -d /usr/lib/ccache ]
+then
+	if [ -d /home/mnaveau ]
+	then
+		export CCACHE_DIR=/home/mnaveau/.ccache
+	fi
+        export PATH=/usr/lib/ccache:$PATH
+        export CCACHE_SLOPPINESS=file_macro,time_macros
+fi
