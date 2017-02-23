@@ -102,20 +102,27 @@ if [ -f $HOME/.git-completion.bash ]; then
     source $HOME/.git-completion.bash
 fi
 
+# setup robotpkg
+################
+source ~/.bash_robotpkg
+
+# setup ccache
+##############
+source ~/.bash_ccache
+
 # manage PATH
 #############
 
-#reset PATH
-#export PATH=/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+add_to_path(){
+    if [[ :$PATH: == *:$1:* ]] ; then
+	echo "$1 is already in the PATH"
+    else
+	export PATH=$1:$PATH
+    fi
+}
 
 # master pdf editor
-export PATH=~/Software/master-pdf-editor-4:$PATH
+add_to_path ~/Software/master-pdf-editor-4
 
 # QtCreator
-export PATH=~/Software/Qt/Tools/QtCreator/bin:$PATH
-
-# robotpkg
-source ~/.bashrobotpkg
-
-# ccache
-source ~/.bashccache
+add_to_path ~/Software/Qt/Tools/QtCreator/bin

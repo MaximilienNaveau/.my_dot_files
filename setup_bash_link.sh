@@ -22,8 +22,8 @@ then
     move ~/.bash_aliases
     move ~/.bash_ccache
     move ~/.bash_logout
-    move ~/.bashrobotpkg
-    move ~/.bashrc tmp_container
+    move ~/.bash_robotpkg
+    move ~/.bashrc
     cd ~
     ln -s ~/.bash_local/bash_aliases .bash_aliases  
     ln -s ~/.bash_local/bash_ccache .bash_ccache   

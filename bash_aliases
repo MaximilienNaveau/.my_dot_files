@@ -44,14 +44,10 @@ fi'
 
 develworkspace=~/devel/workspace/devel/setup.bash
 
+alias sourcedevelworkspace='source $indigo
 if [[ :$PATH: == *:"$HOME/devel/amd-clmc/scripts":* ]] ; then
-    echo " O.K., the directory is on the path "
-else
-    echo " oops, the directory is not on the path "
+    export PATH=$HOME/devel/amd-clmc/scripts:$PATH
 fi
-
-alias sourcedevelworkspace='export PATH=$HOME/devel/amd-clmc/scripts:$PATH
-source $indigo
 if [ -f $develworkspace ]; then
         source $develworkspace
         echo "source $develworkspace"
@@ -88,4 +84,4 @@ alias gits='git status'
 alias qtcreator_dark_scheme='qtcreator -stylesheet=~/Software/Qt-Creator-Darcula/darcula.css'
 
 
-echo "~/.bash_aliases sourced"
+#echo "~/.bash_aliases sourced"
