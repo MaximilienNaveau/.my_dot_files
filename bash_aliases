@@ -31,7 +31,6 @@ alias ccmake3='~/Software/cmake-3.8.0-rc1/bin/ccmake'
 
 # reset PATH
 #alias resetbash='export PATH=/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
-#export PATH=~/devel/install/master-pdf-editor-4:$PATH'
 
 
 # for ros
@@ -42,21 +41,21 @@ else
 	echo "no file $indigo"
 fi'
 
-develworkspace=~/devel/workspace/devel/setup.bash
-
-alias sourcedevelworkspace='source $indigo
-if [[ :$PATH: == *:"$HOME/devel/amd-clmc/scripts":* ]] ; then
-    export PATH=$HOME/devel/amd-clmc/scripts:$PATH
-fi
-if [ -f $develworkspace ]; then
+source_devel_workspace(){
+    source $indigo
+    develworkspace=~/devel/workspace/devel/setup.bash
+    add_to_path $HOME/devel/amd-clmc/scripts
+    if [ -f $develworkspace ]
+    then
         source $develworkspace
-        echo "source $develworkspace"
-else
+    else
 	echo "no ros workspace in ~/devel/"
-fi'
+    fi
+}
+alias sourcedevelworkspace='source_devel_workspace'
 
 athenaworkspace=~/devel-athena/workspace/devel/setup.bash
-alias sourceathenaworkspace='export PATH=$HOME/devel-athena/amd-clmc/scripts:$PATH ;
+alias sourceathenaworkspace='add_to_env PATH $HOME/devel-athena/amd-clmc/scripts ;
 if [ -f $athenaworkspace ]; then
      	source $indigo ;
         source $athenaworkspace ;
