@@ -78,6 +78,41 @@ xterm*|rxvt*)
     ;;
 esac
 
+# manage PATH
+#############
+
+# add_to_env is a function that modify a BASH env var
+# it will add a user defined path and check if it already exist.
+# if so the function does nothing
+# if not the function adds the given path to the env var
+#   USAGE : add_to_env $arg1 $arg2
+#   $arg1 is the path to add
+#   $arg2 is the BASH environment to modify 
+add_to_env(){
+    if [ "$#" -ne 2 ]
+    then
+	echo "Illegal number of parameters"
+    else
+	envVar=$1
+	pathToAdd=$2
+	if [[ :${!envVar}: == *:$pathToAdd:* ]] ; then
+	    echo "$pathToAdd is already in the $envVar"
+	else
+	    export $envVar=$pathToAdd:${!envVar}
+	fi
+#	echo "$pathToAdd $envVar=${!envVar}" 
+    fi
+}
+
+# master pdf editor
+add_to_env PATH ~/Software/master-pdf-editor-4
+
+# QtCreator
+add_to_env PATH ~/Software/Qt/Tools/QtCreator/bin
+
+# Anaconda2
+add_to_env PATH /home/mnaveau/Software/anaconda2/bin
+
 # Set fancy aliases
 ###################
 if [ -f ~/.bash_aliases ]; then
@@ -110,19 +145,16 @@ source ~/.bash_robotpkg
 ##############
 source ~/.bash_ccache
 
-# manage PATH
-#############
+# SNOPT python "not working"
+############################
+#add_to_env SNOPT7 $HOME/devel/workspace/build/catkin/third_party/snopt_cpp/snopt_extern/snopt7
+#add_to_env LD_LIBRARY_PATH $HOME/devel/workspace/build/catkin/third_party/snopt_cpp/snopt_extern/lib
+#add_to_env PYTHONPATH $HOME/.local/lib/python2.7/site-packages
 
-add_to_path(){
-    if [[ :$PATH: == *:$1:* ]] ; then
-	echo "$1 is already in the PATH"
-    else
-	export PATH=$1:$PATH
-    fi
-}
-
-# master pdf editor
-add_to_path ~/Software/master-pdf-editor-4
-
-# QtCreator
-add_to_path ~/Software/Qt/Tools/QtCreator/bin
+# Gurobi
+########
+GUROBI_HOME_TMP $HOME/Software/gurobi702/linux64
+add_to_env PATH $GUROBI_HOME_TMP/bin
+add_to_env LD_LIBRARY_PATH $GUROBI_HOME_TMP/lib
+add_to_env PYTHONPATH $GUROBI_HOME_TMP/lib/python2.7
+add_to_env GUROBI_HOME $HOME_TMP/Software/gurobi702/linux64
