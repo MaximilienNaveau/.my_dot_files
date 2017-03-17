@@ -175,4 +175,4 @@ add_to_env PYTHONPATH $HOME/Software/install/lib/python
 add_to_env PYTHONPATH $HOME/devel/workspace/src/catkin/wip/nmpc_multicontact/python
 
 # hack to keep a bash open when starting it with a command
-[[ $startup_cmd ]] && { declare +x $startup_cmd; eval "$startup_cmd"; }
+[[ $startup_cmd ]] && { declare +x "$startup_cmd"; eval "$startup_cmd"; }

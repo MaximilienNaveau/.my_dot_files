@@ -45,10 +45,11 @@
       type = Terminal
       order = 1
       parent = child1
+      command = env startup_cmd="cd ~/devel/workspace/src/catkin/wip/nmpc_multicontact/python" bash
     [[[terminal4]]]
       profile = default
       type = Terminal
       order = 1
       parent = child2
-      command = ""
+      command = env startup_cmd="cd ~/devel/workspace/src/catkin/wip/nmpc_multicontact/python" bash
 [plugins]
