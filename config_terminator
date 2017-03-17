@@ -7,7 +7,6 @@
   [[default]]
     background_image = None
     login_shell = True
-    exit_action = hold
     scrollback_infinite = True
 [layouts]
   [[default]]
