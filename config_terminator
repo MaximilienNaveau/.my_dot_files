@@ -1,0 +1,54 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  handle_size = 1
+  inactive_color_offset = 1.0
+[keybindings]
+[profiles]
+  [[default]]
+    background_image = None
+    login_shell = True
+    exit_action = hold
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+  [[qtcreator]]
+    [[[child0]]]
+      position = 55:24
+      type = Window
+      order = 0
+      parent = ""
+      size = 1865, 1056
+    [[[child1]]]
+      position = 932
+      type = HPaned
+      order = 0
+      parent = child0
+    [[[child2]]]
+      position = 154
+      type = VPaned
+      order = 0
+      parent = child1
+    [[[terminal3]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child2
+      command = env startup_cmd="qtcreator" bash
+    [[[terminal5]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child1
+    [[[terminal4]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child2
+      command = ""
+[plugins]
