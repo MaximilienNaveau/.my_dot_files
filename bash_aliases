@@ -21,6 +21,17 @@ alias emacsaliases='emacs $HOME/.bash_aliases'
 alias sourcebashrc='source $HOME/.bashrc'
 alias sourcealiases='source $HOME/.bash_aliases'
 
+# color for grep
+alias grep='grep --color=auto'
+
+# cd aliases
+alias cddevel='cd $HOME/devel/workspace'
+alias cdsrc='cd $HOME/devel/workspace/src/catkin'
+alias cdathenauser='cd $HOME/devel/workspace/src/catkin/robots/athenaUser'
+
+alias cdwritting='cd $HOME/Documents/writting'
+
+
 # Manage cmake version
 ######################
 alias cmake3='~/Software/cmake-3.8.0-rc1/bin/cmake'
@@ -44,7 +55,7 @@ fi'
 source_devel_workspace(){
     source $indigo
     develworkspace=~/devel/workspace/devel/setup.bash
-    add_to_path $HOME/devel/amd-clmc/scripts
+    add_to_env PATH $HOME/devel/amd-clmc/scripts
     if [ -f $develworkspace ]
     then
         source $develworkspace
@@ -54,32 +65,31 @@ source_devel_workspace(){
 }
 alias sourcedevelworkspace='source_devel_workspace'
 
-athenaworkspace=~/devel-athena/workspace/devel/setup.bash
-alias sourceathenaworkspace='add_to_env PATH $HOME/devel-athena/amd-clmc/scripts ;
-if [ -f $athenaworkspace ]; then
-     	source $indigo ;
-        source $athenaworkspace ;
-else
-	echo "no ros workspace in ~/devel-athena/" ;
-fi'
+source_athena_workspace(){
+    source $indigo
+    workspace=$HOME/devel_athena/workspace/devel/setup.bash
+    add_to_env PATH $HOME/devel_athena/amd-clmc/scripts
+    if [ -f $workspace ]
+    then
+        source $workspace
+    else
+	echo "no ros workspace in ~/devel_athena/"
+    fi
+}
+alias sourceathenaworkspace='source_devel_workspace'
 
-# color for grep
-alias grep='grep --color=auto'
-
-# cd aliases
-alias cddevel='cd $HOME/devel/workspace'
-alias cdsrc='cd $HOME/devel/workspace/src/catkin/'
-alias cdathenauser='cd $HOME/devel/workspace/src/catkin/robots/athenaUser'
-
-alias cdwritting='cd $HOME/Documents/writting'
-
-# Some git files
-################
+# Some git aliases
+##################
 
 alias gits='git status'
 
 # Qtcreator dark style
 ######################
+qtcreator_devel(){
+    source_devel_workspace
+    qtcreator
+}
+alias qtcreator='qtcreator_devel'
 alias qtcreator_dark_scheme='qtcreator -stylesheet=~/Software/Qt-Creator-Darcula/darcula.css'
 
 

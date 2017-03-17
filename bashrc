@@ -104,14 +104,27 @@ add_to_env(){
     fi
 }
 
+append_to_env(){
+    if [ "$#" -ne 2 ]
+    then
+	echo "Illegal number of parameters"
+    else
+	envVar=$1
+	pathToAdd=$2
+	if [[ :${!envVar}: == *:$pathToAdd:* ]] ; then
+	    echo "$pathToAdd is already in the $envVar"
+	else
+	    export $envVar=${!envVar}:$pathToAdd
+	fi
+#	echo "$pathToAdd $envVar=${!envVar}" 
+    fi
+}
+
 # master pdf editor
 add_to_env PATH ~/Software/master-pdf-editor-4
 
 # QtCreator
 add_to_env PATH ~/Software/Qt/Tools/QtCreator/bin
-
-# Anaconda2
-add_to_env PATH /home/mnaveau/Software/anaconda2/bin
 
 # Set fancy aliases
 ###################
@@ -145,16 +158,21 @@ source ~/.bash_robotpkg
 ##############
 source ~/.bash_ccache
 
+# Gurobi
+########
+#source ~/.bash_gurobi
+
 # SNOPT python "not working"
 ############################
 #add_to_env SNOPT7 $HOME/devel/workspace/build/catkin/third_party/snopt_cpp/snopt_extern/snopt7
 #add_to_env LD_LIBRARY_PATH $HOME/devel/workspace/build/catkin/third_party/snopt_cpp/snopt_extern/lib
 #add_to_env PYTHONPATH $HOME/.local/lib/python2.7/site-packages
 
-# Gurobi
-########
-GUROBI_HOME_TMP $HOME/Software/gurobi702/linux64
-add_to_env PATH $GUROBI_HOME_TMP/bin
-add_to_env LD_LIBRARY_PATH $GUROBI_HOME_TMP/lib
-add_to_env PYTHONPATH $GUROBI_HOME_TMP/lib/python2.7
-add_to_env GUROBI_HOME $HOME_TMP/Software/gurobi702/linux64
+# local install (IPOPT, ...)
+add_to_env LD_LIBRARY_PATH $HOME/Software/install/lib
+add_to_env PYTHONPATH $HOME/Software/install/lib/python
+
+add_to_env PYTHONPATH $HOME/devel/workspace/src/catkin/wip/nmpc_multicontact/python
+
+# hack to keep a bash open when starting it with a command
+[[ $startup_cmd ]] && { declare +x $startup_cmd; eval "$startup_cmd"; }

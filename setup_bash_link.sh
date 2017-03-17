@@ -24,12 +24,14 @@ then
     move ~/.bash_logout
     move ~/.bash_robotpkg
     move ~/.bashrc
+    move ~/.bash_gurobi
     cd ~
     ln -s ~/.bash_local/bash_aliases .bash_aliases  
     ln -s ~/.bash_local/bash_ccache .bash_ccache   
     ln -s ~/.bash_local/bash_logout .bash_logout   
     ln -s ~/.bash_local/bash_robotpkg .bash_robotpkg 
     ln -s ~/.bash_local/bashrc .bashrc
+    ln -s ~/.bash_local/bash_gurobi .bash_gurobi
 fi
 
 cd $pwd_local
