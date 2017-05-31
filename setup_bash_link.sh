@@ -2,6 +2,11 @@
 
 pwd_local=$PWD
 tmpname="tmp_container"
+if [ -f $tmpname ]
+then
+    echo "no tmp_container folder"
+    exit 0
+fi
 move () {
     if [ -f $1 ] && [ ! -L $1 ]
     then 

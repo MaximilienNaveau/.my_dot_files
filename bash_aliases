@@ -25,9 +25,9 @@ alias sourcealiases='source $HOME/.bash_aliases'
 alias grep='grep --color=auto'
 
 # cd aliases
-alias cddevel='cd $HOME/devel/workspace'
-alias cdsrc='cd $HOME/devel/workspace/src/catkin'
-alias cdathenauser='cd $HOME/devel/workspace/src/catkin/robots/athenaUser'
+alias cddevel='cd /home/'$USER'/devel/workspace'
+alias cdsrc='cd /home/'$USER'/devel/workspace/src/catkin'
+alias cdathenauser='cd /home/'$USER'/devel/workspace/src/catkin/robots/athenaUser'
 
 alias cdwritting='cd $HOME/Documents/writting'
 alias cdtalk='cd $HOME/Documents/talk'
@@ -54,30 +54,17 @@ else
 fi'
 
 source_devel_workspace(){
-    source $indigo
-    develworkspace=~/devel/workspace/devel/setup.bash
-    add_to_env PATH $HOME/devel/amd-clmc/scripts
+    sourceindigo
+    develworkspace='/home/'$USER'/devel/workspace/devel/setup.bash'
+    add_to_env PATH /home/$USER/devel/amd-clmc/scripts
     if [ -f $develworkspace ]
     then
         source $develworkspace
     else
-	echo "no ros workspace in ~/devel/"
+	echo "no ros workspace in $develworkspace"
     fi
 }
 alias sourcedevelworkspace='source_devel_workspace'
-
-source_athena_workspace(){
-    source $indigo
-    workspace=$HOME/devel_athena/workspace/devel/setup.bash
-    add_to_env PATH $HOME/devel_athena/amd-clmc/scripts
-    if [ -f $workspace ]
-    then
-        source $workspace
-    else
-	echo "no ros workspace in ~/devel_athena/"
-    fi
-}
-alias sourceathenaworkspace='source_devel_workspace'
 
 # Some git aliases
 ##################
