@@ -183,6 +183,6 @@ add_to_env PYTHONPATH $HOME/devel/workspace/src/catkin/wip/nmpc_multicontact/pyt
 [[ $startup_cmd ]] && { declare +x "$startup_cmd"; eval "$startup_cmd"; }
 
 source /opt/ros/indigo/setup.bash
-source $HOME/Dominik/catkin_ws/devel/setup.bash
+#source $HOME/Dominik/catkin_ws/devel/setup.bash
 
 
