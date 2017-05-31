@@ -30,6 +30,7 @@ alias cdsrc='cd $HOME/devel/workspace/src/catkin'
 alias cdathenauser='cd $HOME/devel/workspace/src/catkin/robots/athenaUser'
 
 alias cdwritting='cd $HOME/Documents/writting'
+alias cdtalk='cd $HOME/Documents/talk'
 
 
 # Manage cmake version

@@ -5,8 +5,9 @@
 [keybindings]
 [profiles]
   [[default]]
-    background_image = None
     login_shell = True
+    background_image = None
+    scroll_on_output = False
     scrollback_infinite = True
 [layouts]
   [[default]]
@@ -44,11 +45,11 @@
       type = Terminal
       order = 1
       parent = child1
-      command = env startup_cmd="cd ~/devel/workspace/src/catkin/wip/nmpc_multicontact/python" bash
+      command = env startup_cmd="cd ~/devel/workspace/src/catkin/wip/nmpc_multicontact/nmpc_multicontact_python" bash
     [[[terminal4]]]
       profile = default
       type = Terminal
       order = 1
       parent = child2
-      command = env startup_cmd="cd ~/devel/workspace/src/catkin/wip/nmpc_multicontact/python" bash
+      command = env startup_cmd="cd ~/devel/workspace/src/catkin/wip/nmpc_multicontact/nmpc_multicontact_python" bash
 [plugins]
