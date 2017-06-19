@@ -10,7 +10,7 @@ fi
 ####################
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -19,7 +19,7 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-export PROMPT_COMMAND="history -a ; history -c ; history -r ; $PROMPT_COMMAND"
+#export PROMPT_COMMAND="history -a ; history -c ; history -r ; $PROMPT_COMMAND"
 
 # set the printer name
 ######################
@@ -125,6 +125,9 @@ add_to_env PATH ~/Software/master-pdf-editor-4
 
 # QtCreator
 add_to_env PATH ~/Software/Qt/Tools/QtCreator/bin
+add_to_env PATH ~/Software/Qt/5.8/gcc_64/bin
+add_to_env LD_LIBRARY_PATH ~/Software/Qt/5.8/gcc_64/lib
+
 
 # Set fancy aliases
 ###################
@@ -158,6 +161,10 @@ source ~/.bash_robotpkg
 ##############
 source ~/.bash_ccache
 
+# setup ccache
+##############
+source ~/.bash_smartgit
+
 # Gurobi
 ########
 #source ~/.bash_gurobi
@@ -176,13 +183,11 @@ export IPOPT_DIR=$HOME/Software/install
 # local install qpoases & binding python
 add_to_env PYTHONPATH $HOME/Software/qpOASES/interfaces/python
 
-# local package (should use catkin)
-add_to_env PYTHONPATH $HOME/devel/workspace/src/catkin/wip/nmpc_multicontact/python
-
 # hack to keep a bash open when starting it with a command
 [[ $startup_cmd ]] && { declare +x "$startup_cmd"; eval "$startup_cmd"; }
 
 source /opt/ros/indigo/setup.bash
 #source $HOME/Dominik/catkin_ws/devel/setup.bash
 
+#export PATH=/is/software/matlab/linux/R2017a/bin:$PATH
 

@@ -4,8 +4,8 @@
 ###############################
 
 # Set up some useful short versions of often used commands.
-alias cprf='cp -fr'
-alias cp='cp -i'
+alias cpfr='cp -fr'
+#alias cp='cp -i'
 alias dir='ls -1 -F -t -l \!* | more'
 #alias fi='find . \( -name "\!*" \) -print'
 alias imake='imake -I$LAB_ROOT/imake -TLAB_Imake.tmpl -D$MACHTYPE'
@@ -35,8 +35,8 @@ alias cdtalk='cd $HOME/Documents/talk'
 
 # Manage cmake version
 ######################
-alias cmake3='~/Software/cmake-3.8.0-rc1/bin/cmake'
-alias ccmake3='~/Software/cmake-3.8.0-rc1/bin/ccmake'
+alias cmake3='$HOME/Software/cmake-3.8.0-rc1/bin/cmake'
+alias ccmake3='$HOME/Software/cmake-3.8.0-rc1/bin/ccmake'
 
 # Manage working environment
 ############################

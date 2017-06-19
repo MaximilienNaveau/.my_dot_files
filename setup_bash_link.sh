@@ -37,6 +37,7 @@ then
     ln -s ~/.bash_local/bash_robotpkg .bash_robotpkg 
     ln -s ~/.bash_local/bashrc .bashrc
     ln -s ~/.bash_local/bash_gurobi .bash_gurobi
+    ln -s ~/.bash_local/bash_smartgit .bash_smartgit
 fi
 
 cd $pwd_local
