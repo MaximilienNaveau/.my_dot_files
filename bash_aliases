@@ -27,6 +27,7 @@ alias grep='grep --color=auto'
 # cd aliases
 alias cddevel='cd /home/'$USER'/devel/workspace'
 alias cdsrc='cd /home/'$USER'/devel/workspace/src/catkin'
+alias cdhumanoid='cd /home/'$USER'/devel/workspace/src/catkin/humanoids/humanoid_control/'
 alias cdathenauser='cd /home/'$USER'/devel/workspace/src/catkin/robots/athenaUser'
 
 alias cdwritting='cd $HOME/Documents/writting'
@@ -82,3 +83,7 @@ alias qtcreator_dark_scheme='qtcreator -stylesheet=~/Software/Qt-Creator-Darcula
 
 
 #echo "~/.bash_aliases sourced"
+
+# Matlab aliase
+###############
+alias matlab=/is/software/matlab/linux/R2017a/bin/matlab

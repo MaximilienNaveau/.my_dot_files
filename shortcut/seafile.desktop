@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Seafile
+Comment=Seafile desktop sync client
+TryExec=seafile-applet
+Exec=seafile-applet -c /local/mnaveau/.ccnet
+Icon=seafile
+Type=Application
+Categories=Network;FileTransfer;

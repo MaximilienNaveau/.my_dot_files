@@ -186,8 +186,4 @@ add_to_env PYTHONPATH $HOME/Software/qpOASES/interfaces/python
 # hack to keep a bash open when starting it with a command
 [[ $startup_cmd ]] && { declare +x "$startup_cmd"; eval "$startup_cmd"; }
 
-source /opt/ros/indigo/setup.bash
-#source $HOME/Dominik/catkin_ws/devel/setup.bash
-
-#export PATH=/is/software/matlab/linux/R2017a/bin:$PATH
-
+add_to_env CCNET_CONF_DIR /local/mnaveau/.ccnet

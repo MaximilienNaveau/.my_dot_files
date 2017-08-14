@@ -30,6 +30,7 @@ then
     move ~/.bash_robotpkg
     move ~/.bashrc
     move ~/.bash_gurobi
+    move ~/.Xresources
     cd ~
     ln -s ~/.bash_local/bash_aliases .bash_aliases  
     ln -s ~/.bash_local/bash_ccache .bash_ccache   
@@ -38,6 +39,7 @@ then
     ln -s ~/.bash_local/bashrc .bashrc
     ln -s ~/.bash_local/bash_gurobi .bash_gurobi
     ln -s ~/.bash_local/bash_smartgit .bash_smartgit
+    ln -s ~/.bash_local/Xresources .Xresources
 fi
 
 cd $pwd_local
