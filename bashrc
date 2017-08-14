@@ -186,4 +186,4 @@ add_to_env PYTHONPATH $HOME/Software/qpOASES/interfaces/python
 # hack to keep a bash open when starting it with a command
 [[ $startup_cmd ]] && { declare +x "$startup_cmd"; eval "$startup_cmd"; }
 
-add_to_env CCNET_CONF_DIR /local/mnaveau/.ccnet
+add_to_env CCNET_CONF_DIR /local/$USER/.ccnet
