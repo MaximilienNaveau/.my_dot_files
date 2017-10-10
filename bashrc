@@ -187,3 +187,11 @@ add_to_env PYTHONPATH $HOME/Software/qpOASES/interfaces/python
 [[ $startup_cmd ]] && { declare +x "$startup_cmd"; eval "$startup_cmd"; }
 
 add_to_env CCNET_CONF_DIR /local/$USER/.ccnet
+
+
+# gpg pub key id :
+#export GPGKEY="$(gpg -K | awk 'NR==3 {print $2}' | sed 's/2048R\///g')"
+export GPGKEY=407CD2DA
+
+# setup make -j*
+#export MAKEFLAGS=-j$(($(grep -c ^processor /proc/cpuinfo) - 0))

@@ -31,6 +31,7 @@ then
     move ~/.bashrc
     move ~/.bash_gurobi
     move ~/.Xresources
+    move ~/.inputrc
     cd ~
     ln -s ~/.bash_local/bash_aliases .bash_aliases  
     ln -s ~/.bash_local/bash_ccache .bash_ccache   
@@ -40,6 +41,7 @@ then
     ln -s ~/.bash_local/bash_gurobi .bash_gurobi
     ln -s ~/.bash_local/bash_smartgit .bash_smartgit
     ln -s ~/.bash_local/Xresources .Xresources
+    ln -s ~/.bash_local/inputrc .inputrc
 fi
 
 cd $pwd_local

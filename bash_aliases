@@ -87,3 +87,6 @@ alias qtcreator_dark_scheme='qtcreator -stylesheet=~/Software/Qt-Creator-Darcula
 # Matlab aliase
 ###############
 alias matlab=/is/software/matlab/linux/R2017a/bin/matlab
+
+# ssh laas
+alias sshaddlaas='ssh-add ~/.ssh/laas/id_rsa'
