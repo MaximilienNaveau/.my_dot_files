@@ -10,7 +10,7 @@ StartupNotify=true
 X-Ubuntu-Gettext-Domain=terminator
 X-Ayatana-Desktop-Shortcuts=NewWindow;
 Keywords=terminal;shell;prompt;command;commandline;
-Name[en_US]=Qtcreator
+Name[en_US]=qtcreator
 
 [NewWindow Shortcut Group]
 Name=Open a New Window

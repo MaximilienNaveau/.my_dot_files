@@ -46,6 +46,7 @@ alias ccmake3='$HOME/Software/cmake-3.8.0-rc1/bin/ccmake'
 #alias resetbash='export PATH=/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
 
 
+
 # for ros
 indigo=/opt/ros/indigo/setup.bash
 alias sourceindigo='if [ -f $indigo ]; then
@@ -71,6 +72,7 @@ alias sourcedevelworkspace='source_devel_workspace'
 ##################
 
 alias gits='git status'
+alias gitl='git logg'
 
 # Qtcreator dark style
 ######################
@@ -88,5 +90,11 @@ alias qtcreator_dark_scheme='qtcreator -stylesheet=~/Software/Qt-Creator-Darcula
 ###############
 alias matlab=/is/software/matlab/linux/R2017a/bin/matlab
 
+# SSH
+#####
 # ssh laas
 alias sshaddlaas='ssh-add ~/.ssh/laas/id_rsa'
+
+# RAI plot
+##########
+alias plot=$HOME/devel/wip/amd-robot-plotting-framework/RAI/amd_plot_launcher.py
