@@ -95,6 +95,3 @@ alias matlab=/is/software/matlab/linux/R2017a/bin/matlab
 # ssh laas
 alias sshaddlaas='ssh-add ~/.ssh/laas/id_rsa'
 
-# RAI plot
-##########
-alias plot=$HOME/devel/wip/amd-robot-plotting-framework/RAI/amd_plot_launcher.py
