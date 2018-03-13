@@ -1,12 +1,15 @@
 #!/bin/bash
 
 pwd_local=$PWD
-tmpname="tmp_container"
-if [ -f $tmpname ]
+tmpname="deprecated"
+
+# create a deprecated folder t store the previous bash configuration
+if [ ! -d ~/.bash_local/$tmpname ]
 then
-    echo "no tmp_container folder"
-    exit 0
+    echo "no folder named $tmpname, creating one"
+    mkdir $tmpname
 fi
+
 move () {
     if [ -f $1 ] && [ ! -L $1 ]
     then 
@@ -20,10 +23,6 @@ move () {
 if [ -d ~/.bash_local ]
 then
     cd ~/.bash_local
-    if [ ! -d ~/.bash_local/tmp_container ]
-    then 
-	mkdir tmp_container
-    fi
     move ~/.bash_aliases
     move ~/.bash_ccache
     move ~/.bash_logout
@@ -42,6 +41,8 @@ then
     ln -s ~/.bash_local/bash_smartgit .bash_smartgit
     ln -s ~/.bash_local/Xresources .Xresources
     ln -s ~/.bash_local/inputrc .inputrc
+else
+    echo "~/.bash_local do not exist please move this git directory into ~/.bash_local"
 fi
 
 cd $pwd_local
