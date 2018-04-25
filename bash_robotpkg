@@ -1,4 +1,6 @@
-export PATH=/opt/openrobots/bin:$PATH
-export PKG_CONFIG_PATH=/opt/openrobots/lib/pkgconfig:$PKG_CONFIG_PATH
-export LD_LIBRARY_PATH=/opt/openrobots/lib:$LD_LIBRARY_PATH
-export PYTHONPATH=/opt/openrobots/lib/python2.7/site-packages:$PYTHONPATH
+#!/bin/bash
+
+add_to_env PATH /opt/openrobots/bin
+add_to_env PKG_CONFIG_PATH /opt/openrobots/lib/pkgconfig
+add_to_env LD_LIBRARY_PATH /opt/openrobots/lib
+add_to_env PYTHONPATH /opt/openrobots/lib/python2.7/site-packages

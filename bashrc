@@ -1,5 +1,31 @@
 #!/bin/bash
 
+# manage environment variables
+##############################
+
+# add_to_env is a function that modify a BASH env var
+# it will add a user defined path and check if it already exist.
+# if so the function does nothing
+# if not the function adds the given path to the env var
+#   USAGE : add_to_env $arg1 $arg2
+#   $arg1 is the path to add
+#   $arg2 is the BASH environment to modify 
+add_to_env(){
+    if [ "$#" -ne 2 ]
+    then
+	echo "Illegal number of parameters"
+    else
+	envVar=$1
+	pathToAdd=$2
+	if [[ :${!envVar}: == *:$pathToAdd:* ]] ; then
+	    echo "$pathToAdd is already in the $envVar"
+	else
+	    export $envVar=$pathToAdd:${!envVar}
+	fi
+#	echo "$pathToAdd $envVar=${!envVar}" 
+    fi
+}
+
 # only run the following on interactive shells
 ##############################################
 if [ -z "$PS1" ]; then
@@ -78,48 +104,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# manage PATH
-#############
-
-# add_to_env is a function that modify a BASH env var
-# it will add a user defined path and check if it already exist.
-# if so the function does nothing
-# if not the function adds the given path to the env var
-#   USAGE : add_to_env $arg1 $arg2
-#   $arg1 is the path to add
-#   $arg2 is the BASH environment to modify 
-add_to_env(){
-    if [ "$#" -ne 2 ]
-    then
-	echo "Illegal number of parameters"
-    else
-	envVar=$1
-	pathToAdd=$2
-	if [[ :${!envVar}: == *:$pathToAdd:* ]] ; then
-	    echo "$pathToAdd is already in the $envVar"
-	else
-	    export $envVar=$pathToAdd:${!envVar}
-	fi
-#	echo "$pathToAdd $envVar=${!envVar}" 
-    fi
-}
-
-append_to_env(){
-    if [ "$#" -ne 2 ]
-    then
-	echo "Illegal number of parameters"
-    else
-	envVar=$1
-	pathToAdd=$2
-	if [[ :${!envVar}: == *:$pathToAdd:* ]] ; then
-	    echo "$pathToAdd is already in the $envVar"
-	else
-	    export $envVar=${!envVar}:$pathToAdd
-	fi
-#	echo "$pathToAdd $envVar=${!envVar}" 
-    fi
-}
-
 # master pdf editor
 add_to_env PATH ~/Software/master-pdf-editor-4
 
@@ -176,15 +160,24 @@ source ~/.bash_smartgit
 #add_to_env PYTHONPATH $HOME/.local/lib/python2.7/site-packages
 
 # local install (IPOPT, ...)
+add_to_env PATH $HOME/Software/install/bin
+add_to_env PKG_CONFIG_PATH $HOME/Software/install/lib/pkgconfig
 add_to_env LD_LIBRARY_PATH $HOME/Software/install/lib
-add_to_env PYTHONPATH $HOME/Software/install/lib/python
+add_to_env PYTHONPATH $HOME/Software/install/lib/python2.7
+
+# for IPOPT
 export IPOPT_DIR=$HOME/Software/install
+add_to_env PYTHONPATH $HOME/Software/install/lib/python
+
+# for OpenRave
+add_to_env LD_LIBRARY_PATH $(openrave-config --python-dir)/openravepy/_openravepy_
+add_to_env PYTHONPATH $(openrave-config --python-dir)
 
 # local install qpoases & binding python
 add_to_env PYTHONPATH $HOME/Software/qpOASES/interfaces/python
 
 # hack to keep a bash open when starting it with a command
-[[ $startup_cmd ]] && { declare +x "$startup_cmd"; eval "$startup_cmd"; }
+#[[ $startup_cmd ]] && { declare +x "$startup_cmd"; eval "$startup_cmd"; }
 
 add_to_env CCNET_CONF_DIR /local/$USER/.ccnet
 

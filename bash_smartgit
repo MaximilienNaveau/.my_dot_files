@@ -1,1 +1,3 @@
-export PATH=/home/$USER/Software/smartgit/bin:$PATH
+#!/bin/bash
+
+add_to_env PATH /home/$USER/Software/smartgit/bin

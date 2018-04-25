@@ -55,24 +55,38 @@ else
 	echo "no file $indigo"
 fi'
 
+if_exist(){
+    if [ -f $1 ]
+    then
+        $2 $1
+    else
+	echo $3
+    fi
+}
+
 source_devel_workspace(){
     sourceindigo
     develworkspace='/home/'$USER'/devel/workspace/devel/setup.bash'
+    if_exist $develworkspace source "no ros workspace in $develworkspace"
     add_to_env PATH /home/$USER/devel/amd-clmc/scripts
-    if [ -f $develworkspace ]
-    then
-        source $develworkspace
-    else
-	echo "no ros workspace in $develworkspace"
-    fi
 }
 alias sourcedevelworkspace='source_devel_workspace'
+
+source_eth_workspace(){
+    sourceindigo
+    workspace='/home/'$USER'/devel/eth_workspace/devel/setup.bash'
+    if_exist $workspace source "no ros workspace in $workspace"
+}
+alias sourceethworkspace='source_eth_workspace'
+
 
 # Some git aliases
 ##################
 
 alias gits='git status'
 alias gitl='git logg'
+alias gitp='git push'
+alias gitf='git fetch'
 
 # Qtcreator dark style
 ######################
@@ -95,3 +109,8 @@ alias matlab=/is/software/matlab/linux/R2017a/bin/matlab
 # ssh laas
 alias sshaddlaas='ssh-add ~/.ssh/laas/id_rsa'
 
+# virtual environment
+#####################
+
+alias venv_activate='source /home/$USER/devel/devel_venv/bin/activate'
+alias venv_deactivate='deactivate'
