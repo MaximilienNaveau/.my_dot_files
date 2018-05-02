@@ -13,4 +13,7 @@
 [core]
 	editor = emacs -nw
 [alias]
-        logg = log --graph --decorate --oneline --abbrev-commit --all
+	log = log --graph --decorate --oneline --abbrev-commit --all
+	logg = log --graph --decorate --oneline --abbrev-commit --all
+[merge]
+	tool = kdiff3
