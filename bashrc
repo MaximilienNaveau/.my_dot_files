@@ -141,6 +141,10 @@ fi
 ################
 source ~/.bash_robotpkg
 
+# setup julia
+################
+source ~/.bash_julia
+
 # setup ccache
 ##############
 source ~/.bash_ccache

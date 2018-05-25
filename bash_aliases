@@ -33,6 +33,11 @@ alias cdathenauser='cd /home/'$USER'/devel/workspace/src/catkin/robots/athenaUse
 alias cdwritting='cd $HOME/Documents/writting'
 alias cdtalk='cd $HOME/Documents/talk'
 
+# virtual environment
+#####################
+
+alias venv_activate='source /home/$USER/devel/devel_venv/bin/activate'
+alias venv_deactivate='deactivate'
 
 # Manage cmake version
 ######################
@@ -69,6 +74,7 @@ source_devel_workspace(){
     develworkspace='/home/'$USER'/devel/workspace/devel/setup.bash'
     if_exist $develworkspace source "no ros workspace in $develworkspace"
     add_to_env PATH /home/$USER/devel/amd-clmc/scripts
+    venv_activate
 }
 alias sourcedevelworkspace='source_devel_workspace'
 
@@ -109,8 +115,3 @@ alias matlab=/is/software/matlab/linux/R2017a/bin/matlab
 # ssh laas
 alias sshaddlaas='ssh-add ~/.ssh/laas/id_rsa'
 
-# virtual environment
-#####################
-
-alias venv_activate='source /home/$USER/devel/devel_venv/bin/activate'
-alias venv_deactivate='deactivate'

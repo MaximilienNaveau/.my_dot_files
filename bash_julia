@@ -1,0 +1,6 @@
+#!/bin/bash
+
+add_to_env PATH /opt/julia-d386e40c17/bin
+add_to_env PKG_CONFIG_PATH /opt/julia-d386e40c17/lib/pkgconfig
+add_to_env LD_LIBRARY_PATH /opt/julia-d386e40c17/lib
+add_to_env PYTHONPATH /opt/julia-d386e40c17/lib/python2.7/site-packages
