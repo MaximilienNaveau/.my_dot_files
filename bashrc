@@ -170,8 +170,8 @@ export IPOPT_DIR=$HOME/Software/install
 add_to_env PYTHONPATH $HOME/Software/install/lib/python
 
 # for OpenRave
-add_to_env LD_LIBRARY_PATH $(openrave-config --python-dir)/openravepy/_openravepy_
-add_to_env PYTHONPATH $(openrave-config --python-dir)
+#add_to_env LD_LIBRARY_PATH $(openrave-config --python-dir)/openravepy/_openravepy_
+#add_to_env PYTHONPATH $(openrave-config --python-dir)
 
 # local install qpoases & binding python
 add_to_env PYTHONPATH $HOME/Software/qpOASES/interfaces/python

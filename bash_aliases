@@ -45,7 +45,8 @@ alias ccmake3='$HOME/Software/cmake-3.8.0-rc1/bin/ccmake'
 # reset PATH
 #alias resetbash='export PATH=/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
 
-
+# roscore: make sure that ros is sourced
+alias roscore='sourceindigo ; roscore'
 
 # for ros
 indigo=/opt/ros/indigo/setup.bash
