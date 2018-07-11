@@ -70,11 +70,11 @@ if_exist(){
 }
 
 source_devel_workspace(){
+    venv_activate
     sourceindigo
     develworkspace='/home/'$USER'/devel/workspace/devel/setup.bash'
     if_exist $develworkspace source "no ros workspace in $develworkspace"
     add_to_env PATH /home/$USER/devel/amd-clmc/scripts
-    venv_activate
 }
 alias sourcedevelworkspace='source_devel_workspace'
 
@@ -115,3 +115,6 @@ alias matlab=/is/software/matlab/linux/R2017a/bin/matlab
 # ssh laas
 alias sshaddlaas='ssh-add ~/.ssh/laas/id_rsa'
 
+# Eclipse
+#########
+alias eclipse='~/eclipse/java-oxygen/eclipse/eclipse'

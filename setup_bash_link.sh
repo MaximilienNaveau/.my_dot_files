@@ -33,6 +33,7 @@ then
     move ~/.Xresources
     move ~/.inputrc
     move ~/.gitconfig
+    move ~/.bash_bazel
     cd ~
     ln -s ~/.bash_local/bash_aliases .bash_aliases  
     ln -s ~/.bash_local/bash_ccache .bash_ccache   
@@ -45,6 +46,7 @@ then
     ln -s ~/.bash_local/Xresources .Xresources
     ln -s ~/.bash_local/inputrc .inputrc
     ln -s ~/.bash_local/gitconfig .gitconfig
+    ln -s ~/.bash_local/bash_bazel .bash_bazel
 else
     echo "~/.bash_local do not exist please move this git directory into ~/.bash_local"
 fi

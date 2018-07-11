@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Terminator
-Comment=Multiple terminals in one window
+Comment=Launch qtcreator with some additional work terminals
 TryExec=terminator
 Exec=terminator -m -l qtcreator
 Icon=/usr/share/qt4/QtIcon.png
@@ -10,7 +10,7 @@ StartupNotify=true
 X-Ubuntu-Gettext-Domain=terminator
 X-Ayatana-Desktop-Shortcuts=NewWindow;
 Keywords=terminal;shell;prompt;command;commandline;
-Name[en_US]=qtcreator
+Name[en_US]=qtcreator_terminal
 
 [NewWindow Shortcut Group]
 Name=Open a New Window
