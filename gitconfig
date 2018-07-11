@@ -7,7 +7,7 @@
 	helper = cache --timeout=3600
 [user]
 	email = maximilien.naveau@gmail.com
-	name = MaximilienNaveau
+	name = Maximilien Naveau
 [push]
 	default = matching
 [core]

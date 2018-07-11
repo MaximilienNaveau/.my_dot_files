@@ -141,6 +141,14 @@ fi
 ################
 source ~/.bash_robotpkg
 
+# setup bazel (building tool)
+#############################
+# source ~/.bash_bazel # Installed from binary PPA
+
+# setup julia
+################
+source ~/.bash_julia
+
 # setup ccache
 ##############
 source ~/.bash_ccache

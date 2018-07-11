@@ -1,0 +1,10 @@
+#!/bin/bash
+
+package="bazel"
+
+add_to_env PATH /opt/$package/bin
+add_to_env PKG_CONFIG_PATH /opt/$package/lib/pkgconfig
+add_to_env LD_LIBRARY_PATH /opt/$package/lib
+add_to_env PYTHONPATH /opt/$package/lib/python2.7/site-packages
+
+source /opt/bazel/lib/bazel/bin/bazel-complete.bash
