@@ -27,6 +27,7 @@ then
     move ~/.bash_ccache
     move ~/.bash_logout
     move ~/.bash_robotpkg
+    move ~/.bash_openrobots
     move ~/.bash_julia
     move ~/.bashrc
     move ~/.bash_gurobi
@@ -39,6 +40,7 @@ then
     ln -s ~/.bash_local/bash_ccache .bash_ccache   
     ln -s ~/.bash_local/bash_logout .bash_logout   
     ln -s ~/.bash_local/bash_robotpkg .bash_robotpkg 
+    ln -s ~/.bash_local/bash_openrobots .bash_openrobots 
     ln -s ~/.bash_local/bash_julia .bash_julia
     ln -s ~/.bash_local/bashrc .bashrc
     ln -s ~/.bash_local/bash_gurobi .bash_gurobi

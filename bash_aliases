@@ -28,6 +28,7 @@ alias grep='grep --color=auto'
 alias cddevel='cd /home/'$USER'/devel/workspace'
 alias cdsrc='cd /home/'$USER'/devel/workspace/src/catkin'
 alias cdhumanoid='cd /home/'$USER'/devel/workspace/src/catkin/humanoids/humanoid_control/'
+alias cdcontrolgraph='cd /home/'$USER'/devel/workspace/src/catkin/control_graph/'
 alias cdathenauser='cd /home/'$USER'/devel/workspace/src/catkin/robots/athenaUser'
 
 alias cdwritting='cd $HOME/Documents/writting'
@@ -55,11 +56,22 @@ alias roscore='sourceindigo ; roscore'
 
 # for ros
 indigo=/opt/ros/indigo/setup.bash
-alias sourceindigo='if [ -f $indigo ]; then
-        source $indigo
-else
+source_indigo(){
+    if [ -f $indigo ]; then
+	source $indigo
+	#IFS=', ' read -r -a IP <<< `hostname -I`
+	#export ROS_IP="${IP[0]}"
+    else
 	echo "no file $indigo"
-fi'
+    fi
+}
+alias sourceindigo='source_indigo'
+
+launch_roscore(){
+    source_indigo
+    roscore
+}
+alias roscore='launch_roscore'
 
 if_exist(){
     if [ -f $1 ]
@@ -76,6 +88,8 @@ source_devel_workspace(){
     develworkspace='/home/'$USER'/devel/workspace/devel/setup.bash'
     if_exist $develworkspace source "no ros workspace in $develworkspace"
     add_to_env PATH /home/$USER/devel/amd-clmc/scripts
+    if_exist ~/.bash_openrobots source "ERROR: ~/.bash_openrobots does not exists"
+#    if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_robotpkg does not exists"
 }
 alias sourcedevelworkspace='source_devel_workspace'
 
@@ -97,11 +111,6 @@ alias gitf='git fetch'
 
 # Qtcreator dark style
 ######################
-qtcreator_devel(){
-    source_devel_workspace
-    qtcreator
-}
-alias qtcreator='qtcreator_devel'
 alias qtcreator_dark_scheme='qtcreator -stylesheet=~/Software/Qt-Creator-Darcula/darcula.css'
 
 

@@ -104,14 +104,10 @@ xterm*|rxvt*)
     ;;
 esac
 
-# master pdf editor
-add_to_env PATH ~/Software/master-pdf-editor-4
-
 # QtCreator
 add_to_env PATH ~/Software/Qt/Tools/QtCreator/bin
 add_to_env PATH ~/Software/Qt/5.8/gcc_64/bin
 add_to_env LD_LIBRARY_PATH ~/Software/Qt/5.8/gcc_64/lib
-
 
 # Set fancy aliases
 ###################
@@ -139,7 +135,8 @@ fi
 
 # setup robotpkg
 ################
-source ~/.bash_robotpkg
+#source ~/.bash_robotpkg
+#source ~/.bash_openrobots
 
 # setup bazel (building tool)
 #############################
@@ -181,12 +178,7 @@ add_to_env PYTHONPATH $HOME/Software/install/lib/python
 #add_to_env LD_LIBRARY_PATH $(openrave-config --python-dir)/openravepy/_openravepy_
 #add_to_env PYTHONPATH $(openrave-config --python-dir)
 
-# local install qpoases & binding python
-add_to_env PYTHONPATH $HOME/Software/qpOASES/interfaces/python
-
-# hack to keep a bash open when starting it with a command
-#[[ $startup_cmd ]] && { declare +x "$startup_cmd"; eval "$startup_cmd"; }
-
+# I do not remember why this is here
 add_to_env CCNET_CONF_DIR /local/$USER/.ccnet
 
 
