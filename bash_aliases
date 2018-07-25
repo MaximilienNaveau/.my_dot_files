@@ -29,6 +29,7 @@ alias cddevel='cd /home/'$USER'/devel/workspace'
 alias cdsrc='cd /home/'$USER'/devel/workspace/src/catkin'
 alias cdhumanoid='cd /home/'$USER'/devel/workspace/src/catkin/humanoids/humanoid_control/'
 alias cdcontrolgraph='cd /home/'$USER'/devel/workspace/src/catkin/control_graph/'
+alias cdcbcom='cd /home/'$USER'/devel/workspace/src/catkin/humanoids/humanoid_hardware/cb_communication/'
 alias cdathenauser='cd /home/'$USER'/devel/workspace/src/catkin/robots/athenaUser'
 
 alias cdwritting='cd $HOME/Documents/writting'
