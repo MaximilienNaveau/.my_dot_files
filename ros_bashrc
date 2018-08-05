@@ -1,0 +1,3 @@
+source ~/.bashrc
+sourcedevelworkspace
+cd /home/$USER/devel/workspace/src/catkin/humanoids/nmpc_multicontact/nmpc_multicontact_python

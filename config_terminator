@@ -40,19 +40,19 @@
       type = Terminal
       order = 0
       parent = child2
-      command = bash --rcfile <(echo "source ~/.bashrc ; source /home/$USER/devel/devel_venv/bin/activate ; source ~/devel/workspace/devel/setup.bash ; source ~/.bash_openrobots ; cd /home/$USER/devel/workspace/src/catkin/humanoids/nmpc_multicontact/nmpc_multicontact_python ; qtcreator")
+      command = bash --rcfile ~/.bash_local/ros_bashrc -ic 'qtcreator'
     [[[terminal5]]]
       profile = default
       type = Terminal
       order = 1
       parent = child1
-      command = bash --rcfile <(echo "source ~/.bashrc ; source /home/$USER/devel/devel_venv/bin/activate ; source ~/devel/workspace/devel/setup.bash ; source ~/.bash_openrobots ; cd /home/$USER/devel/workspace/src/catkin/humanoids/nmpc_multicontact/nmpc_multicontact_python")
+      command = bash --rcfile ~/.bash_local/ros_bashrc -i
     [[[terminal4]]]
       profile = default
       type = Terminal
       order = 1
       parent = child2
-      command = bash --rcfile <(echo "source ~/.bashrc ; source /home/$USER/devel/devel_venv/bin/activate ; source ~/devel/workspace/devel/setup.bash ; source ~/.bash_openrobots ; cd /home/$USER/devel/workspace/src/catkin/humanoids/nmpc_multicontact/nmpc_multicontact_python")
+      command = bash --rcfile ~/.bash_local/ros_bashrc -i
   [[pycharm]]
     [[[child0]]]
       position = 1971:24
@@ -80,23 +80,23 @@
       type = Terminal
       order = 1
       parent = child3
-      command = bash --rcfile <(echo ". ~/.bashrc ; source /home/$USER/devel/devel_venv/bin/activate ; source /home/$USER/devel/workspace/devel/setup.bash ; cd /home/$USER/devel/workspace/src/catkin/wip/nmpc_multicontact/nmpc_multicontact_python ; pycharm")
+      command = bash --rcfile ~/.bash_local/ros_bashrc -ic 'pycharm'
     [[[terminal4]]]
       profile = default
       type = Terminal
       order = 0
       parent = child3
-      command = bash --rcfile <(echo ". ~/.bashrc ; source /home/$USER/devel/devel_venv/bin/activate ; source /home/$USER/devel/workspace/devel/setup.bash ; gepetto-viewer-server ; cd /home/$USER/devel/workspace/src/catkin/wip/nmpc_multicontact/nmpc_multicontact_python")
+      command = bash --rcfile ~/.bash_local/ros_bashrc -i
     [[[terminal7]]]
       profile = default
       type = Terminal
       order = 1
       parent = child1
-      command = bash --rcfile <(echo ". ~/.bashrc ; source /home/$USER/devel/devel_venv/bin/activate ; source /home/$USER/devel/workspace/devel/setup.bash ; cd /home/$USER/devel/workspace/src/catkin/wip/nmpc_multicontact/nmpc_multicontact_python")
+      command = bash --rcfile ~/.bash_local/ros_bashrc -i
     [[[terminal6]]]
       profile = default
       type = Terminal
       order = 1
       parent = child2
-      command = bash --rcfile <(echo ". ~/.bashrc ; source /home/$USER/devel/devel_venv/bin/activate ; source /home/$USER/devel/workspace/devel/setup.bash ; cd ~/devel/workspace/src/catkin/wip/nmpc_multicontact/nmpc_multicontact_python")
+      command = bash --rcfile ~/.bash_local/ros_bashrc -i
 [plugins]

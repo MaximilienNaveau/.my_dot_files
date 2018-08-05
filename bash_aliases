@@ -91,6 +91,7 @@ source_devel_workspace(){
     add_to_env PATH /home/$USER/devel/amd-clmc/scripts
     if_exist ~/.bash_openrobots source "ERROR: ~/.bash_openrobots does not exists"
 #    if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_robotpkg does not exists"
+    add_to_env CMAKE_PREFIX_PATH /opt/ros/indigo
 }
 alias sourcedevelworkspace='source_devel_workspace'
 
