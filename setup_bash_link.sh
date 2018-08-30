@@ -29,6 +29,7 @@ then
     move ~/.bash_robotpkg
     move ~/.bash_openrobots
     move ~/.bash_julia
+    move ~/.profile
     move ~/.bashrc
     move ~/.bash_gurobi
     move ~/.Xresources
@@ -36,6 +37,7 @@ then
     move ~/.gitconfig
     move ~/.bash_bazel
     move ~/.config/terminator/config
+
     cd ~
     ln -s ~/.bash_local/bash_aliases .bash_aliases  
     ln -s ~/.bash_local/bash_ccache .bash_ccache   
@@ -44,6 +46,7 @@ then
     ln -s ~/.bash_local/bash_openrobots .bash_openrobots 
     ln -s ~/.bash_local/bash_julia .bash_julia
     ln -s ~/.bash_local/bashrc .bashrc
+    ln -s ~/.bash_local/bash_profile .profile
     ln -s ~/.bash_local/bash_gurobi .bash_gurobi
     ln -s ~/.bash_local/bash_smartgit .bash_smartgit
     ln -s ~/.bash_local/Xresources .Xresources
