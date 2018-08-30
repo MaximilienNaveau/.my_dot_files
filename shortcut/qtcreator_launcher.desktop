@@ -2,7 +2,7 @@
 Name=Terminator
 Comment=Launch qtcreator with some additional work terminals
 TryExec=terminator
-Exec=terminator -m -l qtcreator
+Exec=terminator -m -l qtcreator_roscore
 Icon=/usr/share/qt4/QtIcon.png
 Type=Application
 Categories=GNOME;GTK;Utility;TerminalEmulator;System;

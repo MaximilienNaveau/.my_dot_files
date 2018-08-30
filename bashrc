@@ -105,6 +105,7 @@ xterm*|rxvt*)
 esac
 
 # QtCreator
+###########
 add_to_env PATH ~/Software/Qt/Tools/QtCreator/bin
 add_to_env PATH ~/Software/Qt/5.8/gcc_64/bin
 add_to_env LD_LIBRARY_PATH ~/Software/Qt/5.8/gcc_64/lib
@@ -144,7 +145,7 @@ fi
 
 # setup julia
 ################
-source ~/.bash_julia
+#source ~/.bash_julia
 
 # setup ccache
 ##############
@@ -164,6 +165,9 @@ source ~/.bash_smartgit
 #add_to_env LD_LIBRARY_PATH $HOME/devel/workspace/build/catkin/third_party/snopt_cpp/snopt_extern/lib
 #add_to_env PYTHONPATH $HOME/.local/lib/python2.7/site-packages
 
+# IPOPT
+#######
+
 # local install (IPOPT, ...)
 add_to_env PATH $HOME/Software/install/bin
 add_to_env PKG_CONFIG_PATH $HOME/Software/install/lib/pkgconfig
@@ -174,7 +178,8 @@ add_to_env PYTHONPATH $HOME/Software/install/lib/python2.7
 export IPOPT_DIR=$HOME/Software/install
 add_to_env PYTHONPATH $HOME/Software/install/lib/python
 
-# for OpenRave
+# OpenRave
+##########
 #add_to_env LD_LIBRARY_PATH $(openrave-config --python-dir)/openravepy/_openravepy_
 #add_to_env PYTHONPATH $(openrave-config --python-dir)
 
@@ -185,6 +190,3 @@ add_to_env CCNET_CONF_DIR /local/$USER/.ccnet
 # gpg pub key id :
 #export GPGKEY="$(gpg -K | awk 'NR==3 {print $2}' | sed 's/2048R\///g')"
 export GPGKEY=407CD2DA
-
-# setup make -j*
-#export MAKEFLAGS=-j$(($(grep -c ^processor /proc/cpuinfo) - 0))

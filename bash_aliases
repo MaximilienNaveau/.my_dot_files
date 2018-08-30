@@ -49,9 +49,6 @@ alias ccmake3='$HOME/Software/cmake-3.8.0-rc1/bin/ccmake'
 # Manage working environment
 ############################
 
-# reset PATH
-#alias resetbash='export PATH=/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
-
 # roscore: make sure that ros is sourced
 alias roscore='sourceindigo ; roscore'
 
@@ -91,7 +88,6 @@ source_devel_workspace(){
     add_to_env PATH /home/$USER/devel/amd-clmc/scripts
     if_exist ~/.bash_openrobots source "ERROR: ~/.bash_openrobots does not exists"
 #    if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_robotpkg does not exists"
-    add_to_env CMAKE_PREFIX_PATH /opt/ros/indigo
 }
 alias sourcedevelworkspace='source_devel_workspace'
 

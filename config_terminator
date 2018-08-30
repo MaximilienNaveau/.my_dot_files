@@ -38,13 +38,13 @@
       type = Terminal
       order = 1
       parent = child3
-      command = "bash --rcfile ~/.bash_local/ros_bashrc -ic 'qtcreator'"
+      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'qtcreator'"
     [[[terminal4]]]
       profile = default
       type = Terminal
       order = 0
       parent = child3
-      command = "bash --rcfile ~/.bash_local/ros_bashrc -ic 'roscore'"
+      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'roscore'"
     [[[terminal7]]]
       profile = default
       type = Terminal
@@ -86,7 +86,7 @@
       type = Terminal
       order = 0
       parent = child2
-      command = "bash --rcfile ~/.bash_local/ros_bashrc -ic 'qtcreator'"
+      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'qtcreator'"
     [[[terminal5]]]
       profile = default
       type = Terminal
@@ -126,19 +126,19 @@
       type = Terminal
       order = 1
       parent = child3
-      command = "bash --rcfile ~/.bash_local/ros_bashrc -ic 'pycharm'"
+      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'pycharm'"
     [[[terminal4]]]
       profile = default
       type = Terminal
       order = 0
       parent = child3
-      command = bash --rcfile ~/.bash_local/ros_bashrc -i
+      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'gepetto-viewer-server'"
     [[[terminal7]]]
       profile = default
       type = Terminal
       order = 1
       parent = child1
-      command = bash --rcfile ~/.bash_local/ros_bashrc -i
+      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'ipython'"
     [[[terminal6]]]
       profile = default
       type = Terminal
