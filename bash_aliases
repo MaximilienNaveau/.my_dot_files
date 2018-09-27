@@ -38,7 +38,7 @@ alias cdtalk='cd $HOME/Documents/talk'
 # virtual environment
 #####################
 
-alias venv_activate='source /home/$USER/devel/devel_venv/bin/activate'
+alias venv_activate='source ~/devel/devel_venv/bin/activate'
 alias venv_deactivate='deactivate'
 
 # Manage cmake version
@@ -54,19 +54,23 @@ alias roscore='sourceindigo ; roscore'
 
 # for ros
 indigo=/opt/ros/indigo/setup.bash
-source_indigo(){
-    if [ -f $indigo ]; then
+kinetic=/opt/ros/kinetic/setup.bash
+
+source_ros(){
+    if [ -f $kinetic ]; then
+	source $kinetic
+    elif [ -f $indigo ]; then
 	source $indigo
-	#IFS=', ' read -r -a IP <<< `hostname -I`
-	#export ROS_IP="${IP[0]}"
     else
-	echo "no file $indigo"
-    fi
+	echo "no file $indigo or $kinetic found"
+    fi    
 }
-alias sourceindigo='source_indigo'
+
+alias roscore='source_ros ; roscore'
+alias sourceros='source_ros'
 
 launch_roscore(){
-    source_indigo
+    sourceros
     roscore
 }
 alias roscore='launch_roscore'
@@ -80,19 +84,20 @@ if_exist(){
     fi
 }
 
-source_devel_workspace(){
+source_workspace(){
     venv_activate
-    sourceindigo
-    develworkspace='/home/'$USER'/devel/workspace/devel/setup.bash'
+    sourceros
+    develworkspace=$1'workspace/devel/setup.bash'
     if_exist $develworkspace source "no ros workspace in $develworkspace"
-    add_to_env PATH /home/$USER/devel/amd-clmc/scripts
+    add_to_env PATH $1amd-clmc/scripts
     if_exist ~/.bash_openrobots source "ERROR: ~/.bash_openrobots does not exists"
-#    if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_robotpkg does not exists"
 }
-alias sourcedevelworkspace='source_devel_workspace'
+
+alias sourcedevelworkspace='source_workspace /home/'${USER}'/devel/'
+alias sourceldapworkspace='source_workspace ~/devel/'
 
 source_eth_workspace(){
-    sourceindigo
+    sourceros
     workspace='/home/'$USER'/devel/eth_workspace/devel/setup.bash'
     if_exist $workspace source "no ros workspace in $workspace"
 }
