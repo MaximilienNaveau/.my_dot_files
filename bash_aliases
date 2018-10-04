@@ -128,6 +128,13 @@ alias matlab=/is/software/matlab/linux/R2017a/bin/matlab
 # ssh laas
 alias sshaddlaas='ssh-add ~/.ssh/laas/id_rsa'
 
+# start an agent and add a key
+ssh_init(){
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_rsa
+}
+alias sshinit='ssh_init'
+
 # Eclipse
 #########
 alias eclipse='~/eclipse/java-oxygen/eclipse/eclipse'
