@@ -38,7 +38,7 @@ alias cdtalk='cd $HOME/Documents/talk'
 # virtual environment
 #####################
 
-alias venv_activate='source ~/devel/devel_venv/bin/activate'
+alias venv_activate='source ~/devel_venv/bin/activate'
 alias venv_deactivate='deactivate'
 
 # Manage cmake version
@@ -88,13 +88,15 @@ source_workspace(){
     venv_activate
     sourceros
     develworkspace=$1'workspace/devel/setup.bash'
-    if_exist $develworkspace source "no ros workspace in $develworkspace"
+    if_exist $develworkspace source "ERROR: no ros workspace in $develworkspace"
     add_to_env PATH $1amd-clmc/scripts
-    if_exist ~/.bash_openrobots source "ERROR: ~/.bash_openrobots does not exists"
+#    if_exist ~/.bash_openrobots source "ERROR: ~/.bash_openrobots does not exists"
+    if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_openrobots does not exists"
 }
 
 alias sourcedevelworkspace='source_workspace /home/'${USER}'/devel/'
 alias sourceldapworkspace='source_workspace ~/devel/'
+alias sourcedgworkspace='source_workspace /home/'${USER}'/devel_dg/'
 
 source_eth_workspace(){
     sourceros
