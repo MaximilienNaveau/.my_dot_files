@@ -1,5 +1,21 @@
 #!bin/bash
 
+if_exist(){
+    if [ -f $1 ]
+    then
+        $2 $1
+    else
+	echo $3
+    fi
+}
+
+if_exist_quiet(){
+    if [ -f $1 ]
+    then
+        $2 $1
+    fi
+}
+
 # Manage nice personnal aliases
 ###############################
 
@@ -38,7 +54,7 @@ alias cdtalk='cd $HOME/Documents/talk'
 # virtual environment
 #####################
 
-alias venv_activate='source ~/devel_venv/bin/activate'
+alias venv_activate='if_exist_quiet ~/devel_venv/bin/activate source'
 alias venv_deactivate='deactivate'
 
 # Manage cmake version
@@ -74,15 +90,6 @@ launch_roscore(){
     roscore
 }
 alias roscore='launch_roscore'
-
-if_exist(){
-    if [ -f $1 ]
-    then
-        $2 $1
-    else
-	echo $3
-    fi
-}
 
 source_workspace(){
     venv_activate
