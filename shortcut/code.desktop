@@ -1,9 +1,8 @@
-#!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=Visual Studio Code
 Comment=Code Editing. Redefined.
 GenericName=Text Editor
-Exec=/usr/share/code/code --unity-launch %F
+Exec=terminator -m -l vscode
 Icon=code
 Type=Application
 StartupNotify=true
@@ -12,7 +11,6 @@ Categories=Utility;TextEditor;Development;IDE;
 MimeType=text/plain;inode/directory;
 Actions=new-empty-window;
 Keywords=vscode;
-
 X-Desktop-File-Install-Version=0.22
 
 [Desktop Action new-empty-window]
