@@ -105,6 +105,8 @@ source_eth_workspace(){
 }
 alias sourceethworkspace='source_eth_workspace'
 
+# visual studio code
+alias visual_studio_code='/usr/share/code/code --unity-launch'
 
 # Some git aliases
 ##################
@@ -113,11 +115,6 @@ alias gits='git status'
 alias gitl='git logg'
 alias gitp='git push'
 alias gitf='git fetch'
-
-# Qtcreator dark style
-######################
-alias qtcreator_dark_scheme='qtcreator -stylesheet=~/Software/Qt-Creator-Darcula/darcula.css'
-
 
 #echo "~/.bash_aliases sourced"
 
