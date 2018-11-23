@@ -1,2 +1,43 @@
 {
+    // Editors paramters
+    ////////////////////
+    "editor.rulers": [80],
+    "editor.tabSize": 2,
+    "editor.wordWrap": "off",
+    "editor.insertSpaces": true,
+
+    // files behavior
+    /////////////////
+    "files.exclude": {
+        "*build*": true,
+        "*.vscode*":true,
+    },
+    "files.hotExit": "onExitAndWindowClose",
+
+    // doxygen parameters
+    "doxdocgen.generic.splitCasingSmartText": false,
+    // Set the e-mail address of the author.  Replaces {email}.
+    "doxdocgen.generic.authorEmail": "maximilien.naveau@gmail.com",
+    // Set the name of the author.  Replaces {author}.
+    "doxdocgen.generic.authorName": "Maximilien Naveau",
+
+    // cmake paramters
+    //////////////////
+    "cmake.autoRestartBuild": true,
+    // Environment variables to pass to CMake during build
+    // "cmake.environment": {
+    //   "LD_LIBRARY_PATH":"${env:LD_LIBRARY_PATH}",
+    //   "PATH":"${env:PATH}",
+    //   "PKG_CONFIG_PATH":"${env:PKG_CONFIG_PATH}",
+    //   "PYTHONPATH":"${env:PYTHONPATH}",
+    //   "CMAKE_PREFIX_PATH":"${env:CMAKE_PREFIX_PATH}",
+    // },
+    "cmake.parallelJobs": 8,
+    // When opening a file, `editor.tabSize` and `editor.insertSpaces`
+    // will be detected based on the file contents. Set to false to keep
+    // the values you've explicitly set, above.
+    "editor.detectIndentation": false,
+    "cmake.configureOnOpen": true,
+    "cmake.buildDirectory": "${workspaceRoot}/build-vscode-debug",
+    "editor.minimap.enabled": true,
 }
