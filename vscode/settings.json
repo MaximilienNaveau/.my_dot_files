@@ -5,6 +5,8 @@
     "editor.tabSize": 2,
     "editor.wordWrap": "off",
     "editor.insertSpaces": true,
+    "editor.minimap.enabled": false,
+    "editor.detectIndentation": false,
 
     // files behavior
     /////////////////
@@ -24,20 +26,17 @@
     // cmake paramters
     //////////////////
     "cmake.autoRestartBuild": true,
-    // Environment variables to pass to CMake during build
-    // "cmake.environment": {
-    //   "LD_LIBRARY_PATH":"${env:LD_LIBRARY_PATH}",
-    //   "PATH":"${env:PATH}",
-    //   "PKG_CONFIG_PATH":"${env:PKG_CONFIG_PATH}",
-    //   "PYTHONPATH":"${env:PYTHONPATH}",
-    //   "CMAKE_PREFIX_PATH":"${env:CMAKE_PREFIX_PATH}",
-    // },
     "cmake.parallelJobs": 8,
-    // When opening a file, `editor.tabSize` and `editor.insertSpaces`
-    // will be detected based on the file contents. Set to false to keep
-    // the values you've explicitly set, above.
-    "editor.detectIndentation": false,
-    "cmake.configureOnOpen": true,
+    "cmake.configureOnOpen": false,
     "cmake.buildDirectory": "${workspaceRoot}/build-vscode-debug",
-    "editor.minimap.enabled": true,
+    "cmake.configureSettings": {"BUILD_DOCUMENTATION":"OFF",},
+    
+    // Git
+    //////
+    "git.ignoreLegacyWarning": true,
+
+    // CPP params
+    /////////////
+    "C_Cpp.autoAddFileAssociations": true,
+    "C_Cpp.autocomplete": "Default",
 }
