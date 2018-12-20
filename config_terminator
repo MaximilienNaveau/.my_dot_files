@@ -40,7 +40,7 @@
       type = Terminal
       order = 0
       parent = child2
-      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'qtcreator'"
+      command = "bash --rcfile ~/.bash_local/ros_bashrc_build -i -c 'qtcreator'"
     [[[terminal5]]]
       profile = default
       type = Terminal
@@ -80,7 +80,7 @@
       type = Terminal
       order = 1
       parent = child3
-      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'qtcreator'"
+      command = "bash --rcfile ~/.bash_local/ros_bashrc_build -i -c 'qtcreator'"
     [[[terminal4]]]
       profile = default
       type = Terminal
@@ -147,34 +147,45 @@
       command = bash --rcfile ~/.bash_local/ros_bashrc -i
   [[vscode]]
     [[[child0]]]
-      position = 55:24
+      position = 51:24
       type = Window
       order = 0
       parent = ""
-      size = 1865, 1056
+      size = 1869, 1056
     [[[child1]]]
-      position = 932
+      position = 934
       type = HPaned
       order = 0
       parent = child0
     [[[child2]]]
-      position = 154
+      position = 528
       type = VPaned
       order = 0
       parent = child1
-    [[[terminal3]]]
+    [[[child3]]]
+      position = 264
+      type = VPaned
+      order = 0
+      parent = child2
+    [[[terminal5]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child3
+      command = "bash --rcfile ~/.bash_local/ros_bashrc_build -i -c 'visual_studio_code'"
+    [[[terminal4]]]
       profile = default
       type = Terminal
       order = 0
-      parent = child2
-      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'visual_studio_code'"
-    [[[terminal5]]]
+      parent = child3
+      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'roscore'"
+    [[[terminal7]]]
       profile = default
       type = Terminal
       order = 1
       parent = child1
       command = bash --rcfile ~/.bash_local/ros_bashrc -i
-    [[[terminal4]]]
+    [[[terminal6]]]
       profile = default
       type = Terminal
       order = 1

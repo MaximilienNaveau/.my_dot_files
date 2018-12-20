@@ -5,14 +5,15 @@
     "editor.tabSize": 2,
     "editor.wordWrap": "off",
     "editor.insertSpaces": true,
-    "editor.minimap.enabled": false,
     "editor.detectIndentation": false,
+    "editor.minimap.enabled": true,
 
     // files behavior
     /////////////////
     "files.exclude": {
         "*build*": true,
         "*.vscode*":true,
+        "*.pyc":true,
     },
     "files.hotExit": "onExitAndWindowClose",
 
@@ -27,8 +28,8 @@
     //////////////////
     "cmake.autoRestartBuild": true,
     "cmake.parallelJobs": 8,
-    "cmake.configureOnOpen": false,
-    "cmake.buildDirectory": "${workspaceRoot}/build-vscode-debug",
+    "cmake.configureOnOpen": true,
+    "cmake.buildDirectory": "${workspaceRoot}/../build-vscode-debug",
     "cmake.configureSettings": {"BUILD_DOCUMENTATION":"OFF",},
     
     // Git

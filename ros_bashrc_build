@@ -14,4 +14,4 @@ else
     cd ${src_dir}
 fi
 
-sourcedevelworkspace
+if_exist /home/$USER/devel/workspace/build-vscode-debug/devel/setup.bash source "No build-vscode-debug folder existing"
