@@ -106,9 +106,12 @@ esac
 
 # QtCreator
 ###########
-add_to_env PATH ~/Software/Qt/Tools/QtCreator/bin
-add_to_env PATH ~/Software/Qt/5.8/gcc_64/bin
-add_to_env LD_LIBRARY_PATH ~/Software/Qt/5.8/gcc_64/lib
+
+#add_to_env PATH ~/Software/Qt/Tools/QtCreator/bin
+#add_to_env PATH ~/Software/Qt/5.8/gcc_64/bin
+#add_to_env LD_LIBRARY_PATH ~/Software/Qt/5.8/gcc_64/lib
+
+alias pycharm='~/Software/pycharm-community-2018.2.5/bin/pycharm.sh'
 
 # Set fancy aliases
 ###################

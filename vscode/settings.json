@@ -1,0 +1,43 @@
+{
+    // Editors paramters
+    ////////////////////
+    "editor.rulers": [80],
+    "editor.tabSize": 2,
+    "editor.wordWrap": "off",
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.minimap.enabled": true,
+
+    // files behavior
+    /////////////////
+    "files.exclude": {
+        "*build*": true,
+        "*.vscode*":true,
+        "*.pyc":true,
+    },
+    "files.hotExit": "onExitAndWindowClose",
+
+    // doxygen parameters
+    "doxdocgen.generic.splitCasingSmartText": false,
+    // Set the e-mail address of the author.  Replaces {email}.
+    "doxdocgen.generic.authorEmail": "maximilien.naveau@gmail.com",
+    // Set the name of the author.  Replaces {author}.
+    "doxdocgen.generic.authorName": "Maximilien Naveau",
+
+    // cmake paramters
+    //////////////////
+    "cmake.autoRestartBuild": true,
+    "cmake.parallelJobs": 8,
+    "cmake.configureOnOpen": true,
+    "cmake.buildDirectory": "${workspaceRoot}/../build-vscode-debug",
+    "cmake.configureSettings": {"BUILD_DOCUMENTATION":"OFF",},
+    
+    // Git
+    //////
+    "git.ignoreLegacyWarning": true,
+
+    // CPP params
+    /////////////
+    "C_Cpp.autoAddFileAssociations": true,
+    "C_Cpp.autocomplete": "Default",
+}

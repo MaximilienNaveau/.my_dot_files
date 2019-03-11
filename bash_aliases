@@ -1,5 +1,21 @@
 #!bin/bash
 
+if_exist(){
+    if [ -f $1 ]
+    then
+        $2 $1
+    else
+	      echo $3
+    fi
+}
+
+if_exist_quiet(){
+    if [ -f $1 ]
+    then
+        $2 $1
+    fi
+}
+
 # Manage nice personnal aliases
 ###############################
 
@@ -38,7 +54,7 @@ alias cdtalk='cd $HOME/Documents/talk'
 # virtual environment
 #####################
 
-alias venv_activate='source ~/devel/devel_venv/bin/activate'
+alias venv_activate='if_exist_quiet ~/devel_venv/bin/activate source'
 alias venv_deactivate='deactivate'
 
 # Manage cmake version
@@ -75,26 +91,19 @@ launch_roscore(){
 }
 alias roscore='launch_roscore'
 
-if_exist(){
-    if [ -f $1 ]
-    then
-        $2 $1
-    else
-	echo $3
-    fi
-}
-
 source_workspace(){
     venv_activate
     sourceros
     develworkspace=$1'workspace/devel/setup.bash'
-    if_exist $develworkspace source "no ros workspace in $develworkspace"
+    if_exist $develworkspace source "ERROR: no ros workspace in $develworkspace"
     add_to_env PATH $1amd-clmc/scripts
-    if_exist ~/.bash_openrobots source "ERROR: ~/.bash_openrobots does not exists"
+#    if_exist ~/.bash_openrobots source "ERROR: ~/.bash_openrobots does not exists"
+    if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_openrobots does not exists"
 }
 
 alias sourcedevelworkspace='source_workspace /home/'${USER}'/devel/'
 alias sourceldapworkspace='source_workspace ~/devel/'
+alias sourcedgworkspace='source_workspace /home/'${USER}'/devel_dg/'
 
 source_eth_workspace(){
     sourceros
@@ -103,6 +112,8 @@ source_eth_workspace(){
 }
 alias sourceethworkspace='source_eth_workspace'
 
+# visual studio code
+alias visual_studio_code='/usr/share/code/code --unity-launch'
 
 # Some git aliases
 ##################
@@ -111,11 +122,6 @@ alias gits='git status'
 alias gitl='git logg'
 alias gitp='git push'
 alias gitf='git fetch'
-
-# Qtcreator dark style
-######################
-alias qtcreator_dark_scheme='qtcreator -stylesheet=~/Software/Qt-Creator-Darcula/darcula.css'
-
 
 #echo "~/.bash_aliases sourced"
 
@@ -127,6 +133,13 @@ alias matlab=/is/software/matlab/linux/R2017a/bin/matlab
 #####
 # ssh laas
 alias sshaddlaas='ssh-add ~/.ssh/laas/id_rsa'
+
+# start an agent and add a key
+ssh_init(){
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_rsa
+}
+alias sshinit='ssh_init'
 
 # Eclipse
 #########

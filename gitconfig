@@ -7,13 +7,13 @@
 	helper = cache --timeout=3600
 [user]
 	email = maximilien.naveau@gmail.com
-	name = Naveau
+	name = Maximilien Naveau
 [push]
 	default = matching
 [core]
 	editor = emacs -nw
 [alias]
 	log = log --graph --decorate --oneline --abbrev-commit --all
-	logg = log --graph --decorate --oneline --abbrev-commit --all
+	logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [merge]
 	tool = kdiff3
