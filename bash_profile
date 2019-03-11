@@ -21,6 +21,10 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# disable the PointStick : little button in the middle of the keyboard
-# it seems that this Stick is too sensitive and make the mouse moving alone 
-xinput -set-prop "AlpsPS/2 ALPS DualPoint Stick" "Device Enabled" 0
+if [ "$HOSTNAME" = goldman ]; then
+   # disable the PointStick : little button in the middle of the keyboard
+   # it seems that this Stick is too sensitive and make the mouse moving alone 
+   xinput -set-prop "AlpsPS/2 ALPS DualPoint Stick" "Device Enabled" 0   
+fi
+
+
