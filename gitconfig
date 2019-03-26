@@ -6,12 +6,13 @@
 [credential]
 	helper = cache --timeout=3600
 [user]
-	email = maximilien.naveau@gmail.com
+	email = maximilien.naveau@tuebingen.mpg.de
 	name = Maximilien Naveau
 [push]
 	default = matching
 [core]
 	editor = emacs -nw
+	excludesfile = /home/mnaveau/.gitignore
 [alias]
 	log = log --graph --decorate --oneline --abbrev-commit --all
 	logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit

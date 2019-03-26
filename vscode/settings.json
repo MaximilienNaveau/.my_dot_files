@@ -31,7 +31,7 @@
     "cmake.configureOnOpen": true,
     "cmake.buildDirectory": "${workspaceRoot}/../build-vscode-debug",
     "cmake.configureSettings": {"BUILD_DOCUMENTATION":"OFF",},
-    
+        
     // Git
     //////
     "git.ignoreLegacyWarning": true,
@@ -40,4 +40,14 @@
     /////////////
     "C_Cpp.autoAddFileAssociations": true,
     "C_Cpp.autocomplete": "Default",
+
+    // Shebang patterns
+    "shebang.associations": [
+      {"pattern": "^#!*/bin/bash$", "language": "shellscript"},
+      {"pattern": "^#!*/usr/bin/env python$", "language": "python"},
+    ],
+    "files.associations": {
+      "*.tex": "latex"
+    },
+    "python.dataScience.sendSelectionToInteractiveWindow": true
 }

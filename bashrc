@@ -152,7 +152,7 @@ fi
 
 # setup ccache
 ##############
-source ~/.bash_ccache
+#source ~/.bash_ccache
 
 # setup ccache
 ##############
@@ -181,12 +181,15 @@ add_to_env PYTHONPATH $HOME/Software/install/lib/python2.7
 export IPOPT_DIR=$HOME/Software/install
 add_to_env PYTHONPATH $HOME/Software/install/lib/python
 
+# for PYBULLET local
+add_to_env PYTHONPATH $HOME/Software/src/bullet3/build_cmake/examples/pybullet
+
 # OpenRave
 ##########
 #add_to_env LD_LIBRARY_PATH $(openrave-config --python-dir)/openravepy/_openravepy_
 #add_to_env PYTHONPATH $(openrave-config --python-dir)
 
-# I do not remember why this is here
+# This is to make sure that the seafile .ccnet folder is put in /local/$USER
 add_to_env CCNET_CONF_DIR /local/$USER/.ccnet
 
 

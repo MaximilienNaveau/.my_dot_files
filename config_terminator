@@ -4,191 +4,191 @@
   inactive_color_offset = 1.0
   suppress_multiple_term_dialog = True
 [keybindings]
-[profiles]
-  [[default]]
-    login_shell = True
-    background_image = None
-    scroll_on_output = False
-    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
-  [[qtcreator]]
-    [[[child0]]]
-      position = 55:24
       type = Window
-      order = 0
-      parent = ""
-      size = 1865, 1056
-    [[[child1]]]
-      position = 932
-      type = HPaned
-      order = 0
-      parent = child0
-    [[[child2]]]
-      position = 154
-      type = VPaned
-      order = 0
-      parent = child1
-    [[[terminal3]]]
-      profile = default
-      type = Terminal
-      order = 0
-      parent = child2
-      command = "bash --rcfile ~/.bash_local/ros_bashrc_build -i -c 'qtcreator'"
-    [[[terminal5]]]
-      profile = default
-      type = Terminal
-      order = 1
-      parent = child1
-      command = bash --rcfile ~/.bash_local/ros_bashrc -i
-    [[[terminal4]]]
-      profile = default
-      type = Terminal
-      order = 1
-      parent = child2
-      command = bash --rcfile ~/.bash_local/ros_bashrc -i
-  [[qtcreator_roscore]]
-    [[[child0]]]
-      position = 51:24
-      type = Window
-      order = 0
-      parent = ""
-      size = 1869, 1056
-    [[[child1]]]
-      position = 934
-      type = HPaned
-      order = 0
-      parent = child0
-    [[[child2]]]
-      position = 528
-      type = VPaned
-      order = 0
-      parent = child1
-    [[[child3]]]
-      position = 264
-      type = VPaned
-      order = 0
-      parent = child2
-    [[[terminal5]]]
-      profile = default
-      type = Terminal
-      order = 1
-      parent = child3
-      command = "bash --rcfile ~/.bash_local/ros_bashrc_build -i -c 'qtcreator'"
-    [[[terminal4]]]
-      profile = default
-      type = Terminal
-      order = 0
-      parent = child3
-      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'roscore'"
-    [[[terminal7]]]
-      profile = default
-      type = Terminal
-      order = 1
-      parent = child1
-      command = bash --rcfile ~/.bash_local/ros_bashrc -i
-    [[[terminal6]]]
-      profile = default
-      type = Terminal
-      order = 1
-      parent = child2
-      command = bash --rcfile ~/.bash_local/ros_bashrc -i
   [[pycharm]]
     [[[child0]]]
-      position = 1971:24
-      type = Window
       order = 0
       parent = ""
+      position = 1971:24
       size = 3789, 2136
+      type = Window
     [[[child1]]]
+      order = 0
+      parent = child0
       position = 1894
       type = HPaned
-      order = 0
-      parent = child0
     [[[child2]]]
+      order = 0
+      parent = child1
       position = 1068
       type = VPaned
-      order = 0
-      parent = child1
     [[[child3]]]
+      order = 0
+      parent = child2
       position = 534
       type = VPaned
+    [[[terminal4]]]
+      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'gepetto-viewer-server'"
       order = 0
-      parent = child2
-    [[[terminal5]]]
+      parent = child3
       profile = default
       type = Terminal
+    [[[terminal5]]]
+      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'pycharm'"
       order = 1
       parent = child3
-      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'pycharm'"
-    [[[terminal4]]]
       profile = default
       type = Terminal
-      order = 0
-      parent = child3
-      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'gepetto-viewer-server'"
+    [[[terminal6]]]
+      command = bash --rcfile ~/.bash_local/ros_bashrc -i
+      order = 1
+      parent = child2
+      profile = default
+      type = Terminal
     [[[terminal7]]]
-      profile = default
-      type = Terminal
+      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'ipython'"
       order = 1
       parent = child1
-      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'ipython'"
-    [[[terminal6]]]
       profile = default
       type = Terminal
-      order = 1
-      parent = child2
-      command = bash --rcfile ~/.bash_local/ros_bashrc -i
-  [[vscode]]
+  [[qtcreator]]
     [[[child0]]]
-      position = 51:24
-      type = Window
       order = 0
       parent = ""
-      size = 1869, 1056
+      position = 55:24
+      size = 1865, 1056
+      type = Window
     [[[child1]]]
-      position = 934
-      type = HPaned
       order = 0
       parent = child0
+      position = 932
+      type = HPaned
     [[[child2]]]
+      order = 0
+      parent = child1
+      position = 154
+      type = VPaned
+    [[[terminal3]]]
+      command = "bash --rcfile ~/.bash_local/ros_bashrc_build -i -c 'qtcreator'"
+      order = 0
+      parent = child2
+      profile = default
+      type = Terminal
+    [[[terminal4]]]
+      command = bash --rcfile ~/.bash_local/ros_bashrc -i
+      order = 1
+      parent = child2
+      profile = default
+      type = Terminal
+    [[[terminal5]]]
+      command = bash --rcfile ~/.bash_local/ros_bashrc -i
+      order = 1
+      parent = child1
+      profile = default
+      type = Terminal
+  [[qtcreator_roscore]]
+    [[[child0]]]
+      order = 0
+      parent = ""
+      position = 51:24
+      size = 1869, 1056
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 934
+      type = HPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
       position = 528
       type = VPaned
-      order = 0
-      parent = child1
     [[[child3]]]
+      order = 0
+      parent = child2
       position = 264
       type = VPaned
+    [[[terminal4]]]
+      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'roscore'"
       order = 0
-      parent = child2
-    [[[terminal5]]]
+      parent = child3
       profile = default
       type = Terminal
+    [[[terminal5]]]
+      command = "bash --rcfile ~/.bash_local/ros_bashrc_build -i -c 'qtcreator'"
       order = 1
       parent = child3
-      command = "bash --rcfile ~/.bash_local/ros_bashrc_build -i -c 'visual_studio_code'"
-    [[[terminal4]]]
       profile = default
       type = Terminal
-      order = 0
-      parent = child3
-      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'roscore'"
+    [[[terminal6]]]
+      command = bash --rcfile ~/.bash_local/ros_bashrc -i
+      order = 1
+      parent = child2
+      profile = default
+      type = Terminal
     [[[terminal7]]]
-      profile = default
-      type = Terminal
+      command = bash --rcfile ~/.bash_local/ros_bashrc -i
       order = 1
       parent = child1
-      command = bash --rcfile ~/.bash_local/ros_bashrc -i
-    [[[terminal6]]]
       profile = default
       type = Terminal
+  [[vscode]]
+    [[[child0]]]
+      order = 0
+      parent = ""
+      position = 51:24
+      size = 1869, 1056
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 934
+      type = HPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 528
+      type = VPaned
+    [[[child3]]]
+      order = 0
+      parent = child2
+      position = 264
+      type = VPaned
+    [[[terminal4]]]
+      command = "bash --rcfile ~/.bash_local/ros_bashrc -i -c 'roscore'"
+      order = 0
+      parent = child3
+      profile = default
+      type = Terminal
+    [[[terminal5]]]
+      command = "bash --rcfile ~/.bash_local/ros_bashrc_build -i -c 'visual_studio_code'"
+      order = 1
+      parent = child3
+      profile = default
+      type = Terminal
+    [[[terminal6]]]
+      command = bash --rcfile ~/.bash_local/ros_bashrc -i
       order = 1
       parent = child2
+      profile = default
+      type = Terminal
+    [[[terminal7]]]
       command = bash --rcfile ~/.bash_local/ros_bashrc -i
+      order = 1
+      parent = child1
+      profile = default
+      type = Terminal
 [plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    login_shell = True
+    scroll_on_output = False
+    scrollback_infinite = True

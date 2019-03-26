@@ -2,7 +2,7 @@
 Name=Seafile
 Comment=Seafile desktop sync client
 TryExec=seafile-applet
-Exec=sh -c "seafile-applet -c /local/\$USER/.ccnet"
+Exec=seafile-applet 
 Terminal=false
 Icon=seafile
 Type=Application

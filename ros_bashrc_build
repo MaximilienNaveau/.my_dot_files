@@ -1,17 +1,22 @@
 #!bin/bash
 
+# source the bash local setup
 source ~/.bashrc
-if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_openrobots does not exists"
-sourceros
+
+# activate the venv in /op/openrobots
+source ~/.bash_robotpkg
+
+# source the ros workspace
+if_exist /home/$USER/devel/workspace/build-vscode-debug/devel/setup.bash source "No build-vscode-debug folder existing"
+
+# activate virtual environment
+venv_activate
 
 nmpc_dir=/home/$USER/devel/workspace/src/catkin/humanoids/nmpc_multicontact/nmpc_multicontact_python
 src_dir=/home/$USER/devel/workspace/src/catkin
-
-if [ -f $1 ]
+if [ -f ${nmpc_dir} ]
 then
     cd ${nmpc_dir}
 else
     cd ${src_dir}
 fi
-
-if_exist /home/$USER/devel/workspace/build-vscode-debug/devel/setup.bash source "No build-vscode-debug folder existing"

@@ -5,12 +5,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "(gdb) demo_vicon_client",
+      "name": "(gdb) (launch) demo dg bullet",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/../build-vscode-debug/devel/lib/vicon_sdk/demo_vicon_client",
-      // "args": ["10.32.24.190:801"], // Athena vicon
-      "args": ["10.32.27.53:801"], // Quadruped vicon
+      "program": "${workspaceFolder}/../build-vscode-debug/devel/lib/dg_bullet/demo_dg_bullet",
+      "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
@@ -25,11 +24,117 @@
       ]
     },
     {
+      "name": "(gdb) (launch) demo_dg_test_bench_8_motors_simu",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/../build-vscode-debug/devel/lib/dg_blmc_robots/demo_dg_test_bench_8_motors_simu",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+          {
+              "description": "Enable pretty-printing for gdb",
+              "text": "-enable-pretty-printing",
+              "ignoreFailures": true
+          }
+      ]
+    },
+    {
+      "name": "dgb -ex r python --args demo_dgbullet_pybullet_quadruped.py",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "/usr/bin/python",
+      "args": ["${workspaceFolder}/catkin/dg_control/dg_bullet/demos/demo_dgbullet_pybullet_quadruped.py",],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+          {
+              "description": "Enable pretty-printing for gdb",
+              "text": "-enable-pretty-printing",
+              "ignoreFailures": true
+          },
+          {
+            "description": "enable the python debugging support",
+            "text": "-ex r",
+            "ignoreFailures": true
+        }
+      ],
+    },
+    {
+      "name": "Python: demo_dgbullet_pybullet_quadruped.py",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/catkin/dg_control/dg_bullet/demos/demo_dgbullet_pybullet_quadruped.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "dgb -ex r python --args [current file].py",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "/usr/bin/python",
+      "args": ["${file}",],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+        },
+        {
+          "description": "enable the python debugging support",
+          "text": "-ex r",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "Python: test meshes gepetto_gui_visualization.py",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/catkin/robots/robot_properties/robot_properties_test_meshes/nodes/gepetto_gui_visualization",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Python: quadruped gepetto_gui_visualization.py",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/catkin/robots/robot_properties/robot_properties_quadruped/nodes/gepetto_gui_visualization",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Python: vicon quadruped demo",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/catkin/dg_control/dg_vicon_sdk/demos/demo_quadruped_pose_vel_vicon.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Python: Current File in py_nmpc_multicontact(Integrated Terminal)",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/catkin/humanoids/nmpc_multicontact/nmpc_multicontact_python/"
+    },
+    {
       "name": "Python: Current File (Integrated Terminal)",
       "type": "python",
       "request": "launch",
       "program": "${file}",
-      "args": ["--hostname 10.32.27.53:801"],
       "console": "integratedTerminal"
     },
     {
