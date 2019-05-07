@@ -184,6 +184,9 @@ add_to_env PYTHONPATH $HOME/Software/install/lib/python
 # for PYBULLET local
 add_to_env PYTHONPATH $HOME/Software/src/bullet3/build_cmake/examples/pybullet
 
+# Crocodyle
+add_to_env PYTHONPATH $HOME/Software/src/crocoddyl
+
 # OpenRave
 ##########
 #add_to_env LD_LIBRARY_PATH $(openrave-config --python-dir)/openravepy/_openravepy_

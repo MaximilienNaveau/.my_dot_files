@@ -1,0 +1,83 @@
+{
+	"folders": [
+    {
+      "path": "/home/mnaveau/devel/workspace/src"
+    },
+    {
+      "path": "/home/mnaveau/devel/amd-clmc"
+    },
+    {
+      "path": "/home/mnaveau/devel/treep_amd_clmc"
+    },
+    {
+      "path": "/home/mnaveau/Software/src/sot"
+    },
+    {
+      "path": "/home/mnaveau/devel_sl/workspace/src/catkin/humanoids/humanoid_control/io_tools"
+    },
+    {
+      "path": "/home/mnaveau/devel/ubuntu_installation_scripts"
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "*.tex": "latex",
+      "cctype": "cpp",
+      "cmath": "cpp",
+      "cstdarg": "cpp",
+      "cstddef": "cpp",
+      "cstdio": "cpp",
+      "cstdlib": "cpp",
+      "cstring": "cpp",
+      "ctime": "cpp",
+      "cwchar": "cpp",
+      "cwctype": "cpp",
+      "array": "cpp",
+      "atomic": "cpp",
+      "hash_map": "cpp",
+      "strstream": "cpp",
+      "*.tcc": "cpp",
+      "bitset": "cpp",
+      "chrono": "cpp",
+      "clocale": "cpp",
+      "complex": "cpp",
+      "cstdint": "cpp",
+      "deque": "cpp",
+      "list": "cpp",
+      "unordered_map": "cpp",
+      "vector": "cpp",
+      "exception": "cpp",
+      "fstream": "cpp",
+      "functional": "cpp",
+      "initializer_list": "cpp",
+      "iosfwd": "cpp",
+      "iostream": "cpp",
+      "istream": "cpp",
+      "limits": "cpp",
+      "memory": "cpp",
+      "new": "cpp",
+      "ostream": "cpp",
+      "numeric": "cpp",
+      "ratio": "cpp",
+      "sstream": "cpp",
+      "stdexcept": "cpp",
+      "streambuf": "cpp",
+      "system_error": "cpp",
+      "thread": "cpp",
+      "cinttypes": "cpp",
+      "type_traits": "cpp",
+      "tuple": "cpp",
+      "typeindex": "cpp",
+      "typeinfo": "cpp",
+      "utility": "cpp",
+      "csignal": "cpp",
+      "slist": "cpp",
+      "iomanip": "cpp",
+      "*.ipp": "cpp",
+      "condition_variable": "cpp",
+      "mutex": "cpp",
+      "forward_list": "cpp",
+      "string_view": "cpp"
+    }
+  }
+}

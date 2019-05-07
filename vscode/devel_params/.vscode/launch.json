@@ -24,10 +24,10 @@
       ]
     },
     {
-      "name": "(gdb) (launch) demo_dg_test_bench_8_motors_simu",
+      "name": "(gdb) (launch) interprocess communication",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/../build-vscode-debug/devel/lib/dg_blmc_robots/demo_dg_test_bench_8_motors_simu",
+      "program": "${workspaceFolder}/../build-vscode-debug/devel/lib/interprocess_communication/protobuf_consumer",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

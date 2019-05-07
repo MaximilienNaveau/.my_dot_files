@@ -7,16 +7,17 @@ source ~/.bashrc
 source ~/.bash_robotpkg
 
 # source the ros workspace
+sourceros
 if_exist /home/$USER/devel/workspace/build-vscode-debug/devel/setup.bash source "No build-vscode-debug folder existing"
 
 # activate virtual environment
 venv_activate
 
-nmpc_dir=/home/$USER/devel/workspace/src/catkin/humanoids/nmpc_multicontact/nmpc_multicontact_python
+#nmpc_dir=/home/$USER/devel/workspace/src/catkin/humanoids/nmpc_multicontact/nmpc_multicontact_python
 src_dir=/home/$USER/devel/workspace/src/catkin
-if [ -f ${nmpc_dir} ]
-then
-    cd ${nmpc_dir}
-else
-    cd ${src_dir}
-fi
+#if [ -f ${nmpc_dir} ]
+#then
+#    cd ${nmpc_dir}
+#else
+cd ${src_dir}
+#fi

@@ -28,9 +28,13 @@
     //////////////////
     "cmake.autoRestartBuild": true,
     "cmake.parallelJobs": 8,
-    "cmake.configureOnOpen": true,
+    "cmake.configureOnOpen": false,
     "cmake.buildDirectory": "${workspaceRoot}/../build-vscode-debug",
-    "cmake.configureSettings": {"BUILD_DOCUMENTATION":"OFF",},
+    "cmake.configureSettings": {"BUILD_DOCUMENTATION":"ON",
+                                "CMAKE_INSTALL_PREFIX":"${workspaceRoot}/../install-vscode-debug",
+                                "CATKIN_DEVEL_PREFIX":"${workspaceRoot}/../devel-vscode-debug",
+                                "CMAKE_BUILD_TYPE":"Debug",
+                              },
         
     // Git
     //////
@@ -49,5 +53,7 @@
     "files.associations": {
       "*.tex": "latex"
     },
-    "python.dataScience.sendSelectionToInteractiveWindow": true
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "C_Cpp.updateChannel": "Insiders",
+    "terminal.integrated.rendererType": "dom"
 }
