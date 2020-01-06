@@ -12,7 +12,7 @@
     /////////////////
     "files.exclude": {
         "*build*": true,
-        "*.vscode*":true,
+        "*devel*": true,
         "*.pyc":true,
     },
     "files.hotExit": "onExitAndWindowClose",
@@ -23,27 +23,10 @@
     "doxdocgen.generic.authorEmail": "maximilien.naveau@gmail.com",
     // Set the name of the author.  Replaces {author}.
     "doxdocgen.generic.authorName": "Maximilien Naveau",
-
-    // cmake paramters
-    //////////////////
-    "cmake.autoRestartBuild": true,
-    "cmake.parallelJobs": 8,
-    "cmake.configureOnOpen": false,
-    "cmake.buildDirectory": "${workspaceRoot}/../build-vscode-debug",
-    "cmake.configureSettings": {"BUILD_DOCUMENTATION":"ON",
-                                "CMAKE_INSTALL_PREFIX":"${workspaceRoot}/../install-vscode-debug",
-                                "CATKIN_DEVEL_PREFIX":"${workspaceRoot}/../devel-vscode-debug",
-                                "CMAKE_BUILD_TYPE":"Debug",
-                              },
         
     // Git
     //////
     "git.ignoreLegacyWarning": true,
-
-    // CPP params
-    /////////////
-    "C_Cpp.autoAddFileAssociations": true,
-    "C_Cpp.autocomplete": "Default",
 
     // Shebang patterns
     "shebang.associations": [
@@ -55,5 +38,16 @@
     },
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "C_Cpp.updateChannel": "Insiders",
-    "terminal.integrated.rendererType": "dom"
+    "terminal.integrated.rendererType": "dom",
+
+    "configurations": [
+      {
+          "configurationProvider": "b2.catkin_tools",
+          "intelliSenseMode": "${default}"
+      }
+    ],
+    "catkin_tools.gtestMacroRegex": [
+      "catkin_add_gtest",
+      "test_*"
+  ]
 }

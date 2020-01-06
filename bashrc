@@ -215,3 +215,9 @@ add_to_env CCNET_CONF_DIR /local/$USER/.ccnet
 # gpg pub key id :
 #export GPGKEY="$(gpg -K | awk 'NR==3 {print $2}' | sed 's/2048R\///g')"
 export GPGKEY=407CD2DA
+
+
+# esp-idf (master_board flashing tool)
+export IDF_PATH=$HOME/esp/esp-idf
+add_to_env PATH $IDF_PATH/tools
+add_to_env PATH $HOME/esp/xtensa-esp32-elf/bin
