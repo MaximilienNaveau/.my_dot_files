@@ -38,6 +38,7 @@ then
     move ~/.bash_bazel
     move ~/.config/terminator/config
     move ~/.config/Code/User/settings.json
+    move ~/.config/Code/User/keybindings.json
 
     cd ~
     ln -s ~/.bash_local/bash_aliases .bash_aliases  
@@ -56,6 +57,7 @@ then
     ln -s ~/.bash_local/bash_bazel .bash_bazel
     ln -s ~/.bash_local/config_terminator ./.config/terminator/config
     ln -s ~/.bash_local/vscode/settings.json  ~/.config/Code/User/settings.json
+    ln -s ~/.bash_local/vscode/keybindings.json  ~/.config/Code/User/keybindings.json
 else
     echo "~/.bash_local do not exist please move this git directory into ~/.bash_local"
 fi

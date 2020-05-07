@@ -104,6 +104,22 @@ xterm*|rxvt*)
     ;;
 esac
 
+# SSH
+#####
+#
+# setup ssh-agent
+#
+# set environment variables if user's agent already exists
+#[ -z "$SSH_AUTH_SOCK" ] && SSH_AUTH_SOCK=$(ls -l /tmp/ssh-*/agent.* 2> /dev/null | grep $(whoami) | awk '{print $9}')
+#[ -z "$SSH_AGENT_PID" -a -z `echo $SSH_AUTH_SOCK | cut -d. -f2` ] && SSH_AGENT_PID=$((`echo $SSH_AUTH_SOCK | cut -d. -f2` + 1))
+#[ -n "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK
+#[ -n "$SSH_AGENT_PID" ] && export SSH_AGENT_PID
+
+# start agent if necessary
+#if [ -z $SSH_AGENT_PID ] && [ -z $SSH_TTY ]; then  # if no agent & not in ssh
+#    eval `ssh-agent -s` > /dev/null
+#fi
+
 # QtCreator
 ###########
 
@@ -197,11 +213,7 @@ add_to_env CCNET_CONF_DIR /local/$USER/.ccnet
 export GPGKEY=407CD2DA
 
 
-# Tool chain for the master-board of tflayols
-#############################################
-
-export PATH="$HOME/esp/xtensa-esp32-elf/bin:$PATH"
-export IDF_PATH="$HOME/esp/esp-idf"
-
-# pip bin --user
-export PATH="$HOME/.local/bin/":$PATH
+# esp-idf (master_board flashing tool)
+export IDF_PATH=$HOME/esp/esp-idf
+add_to_env PATH $IDF_PATH/tools
+add_to_env PATH $HOME/esp/xtensa-esp32-elf/bin

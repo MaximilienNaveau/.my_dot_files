@@ -37,27 +37,11 @@
       "empty",
       "brief"
     ],
-
-    // cmake paramters
-    //////////////////
-    "cmake.autoRestartBuild": true,
-    "cmake.parallelJobs": 14,
-    "cmake.configureOnOpen": false,
-    "cmake.buildDirectory": "${workspaceRoot}/../build-vscode-debug",
-    "cmake.configureSettings": {"BUILD_DOCUMENTATION":"OFF",
-                                "CMAKE_INSTALL_PREFIX":"${workspaceRoot}/../install-vscode-debug",
-                                "CATKIN_DEVEL_PREFIX":"${workspaceRoot}/../devel-vscode-debug",
-                                "CMAKE_BUILD_TYPE":"Debug",
-                              },
         
+    "cmake.parallelJobs": 14,
     // Git
     //////
     "git.ignoreLegacyWarning": true,
-
-    // CPP params
-    /////////////
-    "C_Cpp.autoAddFileAssociations": true,
-    "C_Cpp.autocomplete": "Default",
 
     // Shebang patterns
     "shebang.associations": [
@@ -82,6 +66,17 @@
     // 
     "clang-format.executable": "/usr/bin/clang-format-6.0",
     "clang.completion.enable": false,
+
+    "configurations": [
+      {
+          "configurationProvider": "b2.catkin_tools",
+          "intelliSenseMode": "${default}"
+      }
+    ],
+    "catkin_tools.gtestMacroRegex": [
+      "catkin_add_gtest",
+      "test_*"
+  ]
 
     //
     "window.menuBarVisibility": "default",
