@@ -91,6 +91,16 @@ launch_roscore(){
 }
 alias roscore='launch_roscore'
 
+source_decomposed_workspace(){
+    venv_activate
+    sourceros
+    if_exist $1'workspace_ros/devel/setup.bash' source "ERROR: cannot source $1workspace_ros/devel/setup.bash"
+    if_exist $1'workspace_core_robotics/devel/setup.bash' source "ERROR: cannot source $1workspace_core_robotics/devel/setup.bash"
+    if_exist $1'workspace/devel/setup.bash' source "ERROR: cannot source $1workspace/devel/setup.bash"
+    if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_robotpkg does not exists"
+}
+
+
 source_workspace(){
     venv_activate
     sourceros
@@ -102,15 +112,6 @@ source_workspace(){
 }
 
 alias sourcedevelworkspace='source_workspace /home/'${USER}'/devel/'
-alias sourceldapworkspace='source_workspace ~/devel/'
-alias sourcedgworkspace='source_workspace /home/'${USER}'/devel_dg/'
-
-source_eth_workspace(){
-    sourceros
-    workspace='/home/'$USER'/devel/eth_workspace/devel/setup.bash'
-    if_exist $workspace source "no ros workspace in $workspace"
-}
-alias sourceethworkspace='source_eth_workspace'
 
 # visual studio code
 alias visual_studio_code='/usr/share/code/code --unity-launch'

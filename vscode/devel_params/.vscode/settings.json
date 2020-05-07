@@ -58,5 +58,9 @@
     "slist": "cpp"
   },
   "python.pythonPath": "/usr/bin/python",
-  "C_Cpp.intelliSenseEngineFallback": "Enabled"
+  "C_Cpp.intelliSenseEngineFallback": "Enabled",
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "cmake.parallelJobs": 14,
 }

@@ -1,17 +1,47 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
             "includePath": [
-                "${workspaceFolder}/**",
-                "/opt/openrobots/include/**"
+                "/home/mnaveau/devel/workspace/devel-vscode-debug/include/**",
+                "/opt/ros/kinetic/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/hardware/ati_ft_sensor/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/hardware/blmc_drivers/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/robots/blmc_robots/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/robots/dg_blmc_robots/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/dg_control/dg_tools/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/examples/dg_tutorial_with_turtlesim/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/dg_control/dg_vicon_sdk/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/sensors/imu-core/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/control/kino_dynamic_opt/momentumopt/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/tools/mpi_cpp_tools/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/robots/robot_interfaces/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/robots/robot_properties/robot_properties_athena/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/control/kino_dynamic_opt/solver/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/control/kino_dynamic_opt/solver_lqr/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/ros/geometry2/tf2/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/ros/geometry2/tf2_bullet/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/ros/geometry2/tf2_eigen/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/ros/geometry2/tf2_geometry_msgs/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/ros/geometry2/tf2_kdl/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/ros/geometry2/tf2_msgs/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/ros/geometry2/tf2_ros/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/ros/geometry2/tf2_sensor_msgs/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/hardware/vicon_sdk/include/**",
+                "/home/mnaveau/devel/workspace/src/catkin/core_robotics/yaml_cpp_catkin/include/**",
+                "/usr/include/**"
             ],
-            "defines": [],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64",
-            "compileCommands": "/home/mnaveau/devel/workspace/build-vscode-debug/compile_commands.json"
+            "cppStandard": "c++17"
         }
     ],
     "version": 4

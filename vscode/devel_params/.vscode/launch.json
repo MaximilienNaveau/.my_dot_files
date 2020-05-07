@@ -24,11 +24,68 @@
       ]
     },
     {
+        "name": "(gdb) (launch) demo dg bullet",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/../build-vscode-debug/devel/lib/dg_bullet/demo_dg_bullet",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ]
+      },
+    {
       "name": "(gdb) (launch) interprocess communication",
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/../build-vscode-debug/devel/lib/interprocess_communication/protobuf_consumer",
       "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+          {
+              "description": "Enable pretty-printing for gdb",
+              "text": "-enable-pretty-printing",
+              "ignoreFailures": true
+          }
+      ]
+    },
+    {
+      "name": "(gdb) (launch) real_time_tools demo_usb",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/../devel-vscode-debug/lib/real_time_tools/demo_usb_stream_imu_3DM_GX3_25",
+      "args": ["/dev/ttyACM0"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+          {
+              "description": "Enable pretty-printing for gdb",
+              "text": "-enable-pretty-printing",
+              "ignoreFailures": true
+          }
+      ]
+    },
+    {
+      "name": "(gdb) (launch) imu_core",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/../devel-vscode-debug/lib/imu_core/demo_imu_3DM_GX3_25",
+      "args": ["/dev/ttyACM0"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],

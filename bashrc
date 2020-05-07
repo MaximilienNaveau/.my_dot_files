@@ -154,10 +154,6 @@ fi
 ##############
 #source ~/.bash_ccache
 
-# setup ccache
-##############
-source ~/.bash_smartgit
-
 # Gurobi
 ########
 #source ~/.bash_gurobi
@@ -185,7 +181,7 @@ add_to_env PYTHONPATH $HOME/Software/install/lib/python
 add_to_env PYTHONPATH $HOME/Software/src/bullet3/build_cmake/examples/pybullet
 
 # Crocodyle
-add_to_env PYTHONPATH $HOME/Software/src/crocoddyl
+add_to_env PYTHONPATH $HOME/devel/workspace/src/not_catkin/third_party/laas/crocoddyl
 
 # OpenRave
 ##########
@@ -199,3 +195,13 @@ add_to_env CCNET_CONF_DIR /local/$USER/.ccnet
 # gpg pub key id :
 #export GPGKEY="$(gpg -K | awk 'NR==3 {print $2}' | sed 's/2048R\///g')"
 export GPGKEY=407CD2DA
+
+
+# Tool chain for the master-board of tflayols
+#############################################
+
+export PATH="$HOME/esp/xtensa-esp32-elf/bin:$PATH"
+export IDF_PATH="$HOME/esp/esp-idf"
+
+# pip bin --user
+export PATH="$HOME/.local/bin/":$PATH

@@ -3,21 +3,17 @@
 # source the bash local setup
 source ~/.bashrc
 
-# activate the venv in /op/openrobots
-source ~/.bash_robotpkg
+# source the ros
+sourceros
 
 # source the ros workspace
-sourceros
-if_exist /home/$USER/devel/workspace/build-vscode-debug/devel/setup.bash source "No build-vscode-debug folder existing"
+develworkspace='/home/'${USER}'/devel/workspace/devel/setup.bash'
+if_exist $develworkspace source "ERROR: no ros workspace in $develworkspace"
+
+# source /opt/openrobots
+if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_robotpkg does not exists"
 
 # activate virtual environment
 venv_activate
 
-#nmpc_dir=/home/$USER/devel/workspace/src/catkin/humanoids/nmpc_multicontact/nmpc_multicontact_python
-src_dir=/home/$USER/devel/workspace/src/catkin
-#if [ -f ${nmpc_dir} ]
-#then
-#    cd ${nmpc_dir}
-#else
-cd ${src_dir}
-#fi
+
