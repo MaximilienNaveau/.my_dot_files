@@ -217,3 +217,6 @@ export GPGKEY=407CD2DA
 export IDF_PATH=$HOME/esp/esp-idf
 add_to_env PATH $IDF_PATH/tools
 add_to_env PATH $HOME/esp/xtensa-esp32-elf/bin
+
+# treepcd
+source $(python3 -c "import treep; treep.print_setup_treepcd_path()")

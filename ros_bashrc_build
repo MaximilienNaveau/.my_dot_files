@@ -3,17 +3,8 @@
 # source the bash local setup
 source ~/.bashrc
 
-# source the ros
-sourceros
-
-# source the ros workspace
-develworkspace='/home/'${USER}'/devel/workspace/devel/setup.bash'
-if_exist $develworkspace source "ERROR: no ros workspace in $develworkspace"
-
-# source /opt/openrobots
-if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_robotpkg does not exists"
-
 # activate virtual environment
 venv_activate
 
-
+# source the ros workspace and LAAS stuff
+sourcedevelworkspace

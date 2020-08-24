@@ -2,18 +2,6 @@
 	"folders": [
         {
             "path": "/home/mnaveau/devel/workspace"
-        },
-        {
-            "path": "/home/mnaveau/devel/treep_machines_in_motion"
-        },
-        {
-            "path": "/home/mnaveau/devel/treep_robotics"
-        },
-        {
-            "path": "/home/mnaveau/devel/backup_treep_amd_clmc"
-        },
-        {
-            "path": "/home/mnaveau/devel/ubuntu_installation_scripts"
         }
     ],
     "settings": {
