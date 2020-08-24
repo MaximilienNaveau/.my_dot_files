@@ -71,12 +71,15 @@ alias roscore='sourceindigo ; roscore'
 # for ros
 indigo=/opt/ros/indigo/setup.bash
 kinetic=/opt/ros/kinetic/setup.bash
+melodic=/opt/ros/melodic/setup.bash
 
 source_ros(){
     if [ -f $kinetic ]; then
 	source $kinetic
     elif [ -f $indigo ]; then
 	source $indigo
+    elif [ -f $melodic ]; then
+	source $melodic	
     else
 	echo "no file $indigo or $kinetic found"
     fi    
@@ -113,7 +116,7 @@ source_eth_workspace(){
 alias sourceethworkspace='source_eth_workspace'
 
 # visual studio code
-alias visual_studio_code='/usr/share/code/code --unity-launch'
+alias visual_studio_code='code'
 
 # Some git aliases
 ##################

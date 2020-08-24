@@ -23,14 +23,17 @@
     "doxdocgen.generic.authorEmail": "maximilien.naveau@gmail.com",
     // Set the name of the author.  Replaces {author}.
     "doxdocgen.generic.authorName": "Maximilien Naveau",
+    // Doxygen comment trigger. This character sequence triggers generation of
+    // Doxygen comments.
+    "doxdocgen.c.triggerSequence": "/**",
 
     // cmake paramters
     //////////////////
     "cmake.autoRestartBuild": true,
-    "cmake.parallelJobs": 8,
+    "cmake.parallelJobs": 16,
     "cmake.configureOnOpen": false,
     "cmake.buildDirectory": "${workspaceRoot}/../build-vscode-debug",
-    "cmake.configureSettings": {"BUILD_DOCUMENTATION":"ON",
+    "cmake.configureSettings": {"BUILD_DOCUMENTATION":"OFF",
                                 "CMAKE_INSTALL_PREFIX":"${workspaceRoot}/../install-vscode-debug",
                                 "CATKIN_DEVEL_PREFIX":"${workspaceRoot}/../devel-vscode-debug",
                                 "CMAKE_BUILD_TYPE":"Debug",
@@ -55,5 +58,12 @@
     },
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "C_Cpp.updateChannel": "Insiders",
-    "terminal.integrated.rendererType": "dom"
+    "terminal.integrated.rendererType": "dom",
+
+    "includePath": ["/usr/local/include", "/path/to/additional/includes",
+          "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include"
+      ],
+      "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+      }
 }
