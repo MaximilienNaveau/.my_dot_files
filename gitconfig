@@ -6,8 +6,8 @@
 [credential]
 	helper = cache --timeout=3600
 [user]
-	email = maximilien.naveau@tuebingen.mpg.de
-	name = Maximilien Naveau
+	email = maximilien.naveau@gmail.com
+	name = MaximilienNaveau
 [push]
 	default = matching
 [core]

@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=Seafile
 Comment=Seafile desktop sync client
-TryExec=seafile-applet
-Exec=seafile-applet 
+TryExec="sh -c "export CCNET_CONF_DIR=/local/mnaveau/.ccnet && seafile-applet""
+Exec="sh -c "export CCNET_CONF_DIR=/local/mnaveau/.ccnet && seafile-applet""
 Terminal=false
 Icon=seafile
 Type=Application

@@ -170,10 +170,6 @@ fi
 ##############
 #source ~/.bash_ccache
 
-# setup ccache
-##############
-source ~/.bash_smartgit
-
 # Gurobi
 ########
 #source ~/.bash_gurobi
@@ -201,7 +197,7 @@ add_to_env PYTHONPATH $HOME/Software/install/lib/python
 add_to_env PYTHONPATH $HOME/Software/src/bullet3/build_cmake/examples/pybullet
 
 # Crocodyle
-add_to_env PYTHONPATH $HOME/Software/src/crocoddyl
+add_to_env PYTHONPATH $HOME/devel/workspace/src/not_catkin/third_party/laas/crocoddyl
 
 # OpenRave
 ##########
@@ -215,3 +211,12 @@ add_to_env CCNET_CONF_DIR /local/$USER/.ccnet
 # gpg pub key id :
 #export GPGKEY="$(gpg -K | awk 'NR==3 {print $2}' | sed 's/2048R\///g')"
 export GPGKEY=407CD2DA
+
+
+# esp-idf (master_board flashing tool)
+export IDF_PATH=$HOME/esp/esp-idf
+add_to_env PATH $IDF_PATH/tools
+add_to_env PATH $HOME/esp/xtensa-esp32-elf/bin
+
+# treepcd
+source $(python3 -c "import treep; treep.print_setup_treepcd_path()")

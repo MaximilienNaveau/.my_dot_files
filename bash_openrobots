@@ -4,7 +4,7 @@ source_openrobots_workspace(){
     add_to_env PATH /home/$USER/Software/openrobots/bin
     add_to_env PKG_CONFIG_PATH /home/$USER/Software/openrobots/lib/pkgconfig
     add_to_env LD_LIBRARY_PATH /home/$USER/Software/openrobots/lib
-    add_to_env LD_LIBRARY_PATH /home/$USER/Software/openrobots/lib/plugin
+    add_to_env LD_LIBRARY_PATH /home/$USER/Software/openrobots/lib/dynamic-graph-plugins
     add_to_env PYTHONPATH /home/$USER/Software/openrobots/lib/python2.7/site-packages
     add_to_env PATH /home/$USER/Software/openrobots/sbin
     add_to_env ROS_PACKAGE_PATH /home/$USER/Software/openrobots

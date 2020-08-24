@@ -57,6 +57,9 @@ alias cdtalk='cd $HOME/Documents/talk'
 alias venv_activate='if_exist_quiet ~/devel_venv/bin/activate source'
 alias venv_deactivate='deactivate'
 
+alias venv_activate3='if_exist_quiet ~/devel_venv3/devel_venv3/bin/activate source'
+alias venv_deactivate3='deactivate'
+
 # Manage cmake version
 ######################
 alias cmake3='$HOME/Software/cmake-3.8.0-rc1/bin/cmake'
@@ -94,26 +97,41 @@ launch_roscore(){
 }
 alias roscore='launch_roscore'
 
-source_workspace(){
+source_decomposed_workspace(){
     venv_activate
     sourceros
+    if_exist $1'workspace_ros/devel/setup.bash' source "ERROR: cannot source $1workspace_ros/devel/setup.bash"
+    if_exist $1'workspace_core_robotics/devel/setup.bash' source "ERROR: cannot source $1workspace_core_robotics/devel/setup.bash"
+    if_exist $1'workspace/devel/setup.bash' source "ERROR: cannot source $1workspace/devel/setup.bash"
+    if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_robotpkg does not exists"
+}
+
+install_robotpkg_python2(){
+    source ~/.bash_local/install_robotpkg2
+}
+
+install_robotpkg_python3(){
+    source ~/.bash_local/install_robotpkg3
+}
+
+source_workspace(){
+    if [ $2 = 2 ]
+    then
+        venv_activate
+        if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_openrobots does not exists"
+        sourceros
+        cd $1/workspace && catkin profile set python2 && catkin config && cd -
+    else
+        venv_activate3
+        if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_openrobots does not exists"
+        sourceros
+        cd $1/workspace && catkin profile set python3 && catkin config && cd -
+    fi
     develworkspace=$1'workspace/devel/setup.bash'
     if_exist $develworkspace source "ERROR: no ros workspace in $develworkspace"
-    add_to_env PATH $1amd-clmc/scripts
-#    if_exist ~/.bash_openrobots source "ERROR: ~/.bash_openrobots does not exists"
-    if_exist ~/.bash_robotpkg source "ERROR: ~/.bash_openrobots does not exists"
 }
 
-alias sourcedevelworkspace='source_workspace /home/'${USER}'/devel/'
-alias sourceldapworkspace='source_workspace ~/devel/'
-alias sourcedgworkspace='source_workspace /home/'${USER}'/devel_dg/'
-
-source_eth_workspace(){
-    sourceros
-    workspace='/home/'$USER'/devel/eth_workspace/devel/setup.bash'
-    if_exist $workspace source "no ros workspace in $workspace"
-}
-alias sourceethworkspace='source_eth_workspace'
+alias sourcedevelworkspace='source_workspace /home/'${USER}'/devel/ 3'
 
 # visual studio code
 alias visual_studio_code='code'

@@ -2,68 +2,96 @@
     // Editors paramters
     ////////////////////
     "editor.rulers": [80],
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "editor.wordWrap": "off",
     "editor.insertSpaces": true,
     "editor.detectIndentation": false,
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
 
     // files behavior
     /////////////////
     "files.exclude": {
         "*build*": true,
-        "*.vscode*":true,
-        "*.pyc":true,
+        "*devel*": true,
+        "*logs*": true,
+        "*.pyc": true,
+        "*.catkin_tools*": true
     },
     "files.hotExit": "onExitAndWindowClose",
 
     // doxygen parameters
     "doxdocgen.generic.splitCasingSmartText": false,
-    // Set the e-mail address of the author.  Replaces {email}.
-    "doxdocgen.generic.authorEmail": "maximilien.naveau@gmail.com",
-    // Set the name of the author.  Replaces {author}.
-    "doxdocgen.generic.authorName": "Maximilien Naveau",
-    // Doxygen comment trigger. This character sequence triggers generation of
-    // Doxygen comments.
-    "doxdocgen.c.triggerSequence": "/**",
-
-    // cmake paramters
-    //////////////////
-    "cmake.autoRestartBuild": true,
-    "cmake.parallelJobs": 16,
-    "cmake.configureOnOpen": false,
-    "cmake.buildDirectory": "${workspaceRoot}/../build-vscode-debug",
-    "cmake.configureSettings": {"BUILD_DOCUMENTATION":"OFF",
-                                "CMAKE_INSTALL_PREFIX":"${workspaceRoot}/../install-vscode-debug",
-                                "CATKIN_DEVEL_PREFIX":"${workspaceRoot}/../devel-vscode-debug",
-                                "CMAKE_BUILD_TYPE":"Debug",
-                              },
+    // License tag
+    "doxdocgen.file.customTag": ["@license BSD 3-clause"],
+    // File copyright documentation tag.  Array of strings will be converted to one line per element.  Can template {year}.
+    "doxdocgen.file.copyrightTag": [
+      "@copyright Copyright (c) {year}, New York University and Max Planck Gesellschaft"
+    ],
+    // Empty the file name
+    "doxdocgen.file.fileTemplate": "@file",
+    // Header file order
+    "doxdocgen.file.fileOrder": [
+      "file",
+      "custom",
+      "copyright",
+      "empty",
+      "brief"
+    ],
         
+    "cmake.parallelJobs": 14,
     // Git
     //////
     "git.ignoreLegacyWarning": true,
 
-    // CPP params
-    /////////////
-    "C_Cpp.autoAddFileAssociations": true,
-    "C_Cpp.autocomplete": "Default",
-
     // Shebang patterns
     "shebang.associations": [
       {"pattern": "^#!*/bin/bash$", "language": "shellscript"},
-      {"pattern": "^#!*/usr/bin/env python$", "language": "python"},
+      {"pattern": "*python*", "language": "python"}
     ],
     "files.associations": {
-      "*.tex": "latex"
+      "*.tex": "latex",
+      "*.dox": "doxygen"
     },
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "C_Cpp.updateChannel": "Insiders",
     "terminal.integrated.rendererType": "dom",
+    //
+    "[doxygen]": {      
+    },
+    "[cpp]": {
+      "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "explorer.confirmDragAndDrop": false,
+    
+    // 
+    "clang-format.executable": "/usr/bin/clang-format-6.0",
+    "clang.completion.enable": false,
 
-    "includePath": ["/usr/local/include", "/path/to/additional/includes",
-          "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include"
-      ],
-      "[cpp]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
+    // catkin tools
+    "configurations": [
+      {
+          "configurationProvider": "b2.catkin_tools",
+          "intelliSenseMode": "${default}"
       }
+    ],
+    "catkin_tools.gtestMacroRegex": [
+      "catkin_add_gtest",
+      "test_*"
+    ],
+
+    //
+    "window.menuBarVisibility": "default",
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.visible": true,
+    "breadcrumbs.enabled": true,
+    "editor.renderWhitespace": "none",
+
+    "version": 4,
+    "autoDocstring.docstringFormat": "google",
+    "cmake.configureOnOpen": true,
+    "editor.renderControlCharacters": false,
+    "extensions.ignoreRecommendations": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    }
 }
