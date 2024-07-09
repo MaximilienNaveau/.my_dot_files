@@ -1,1 +1,1 @@
-Dummy folder to conatain the previous bash setup before replacement
+# bash-setup
