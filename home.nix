@@ -18,11 +18,15 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
+    # Adds the 'cowsay' command to your environment.
+    # It prints a cow saying somethings.
     pkgs.cowsay
+    # Tells you your daily fortune message.
+    pkgs.fortune
+    # Monitor the cpu and memory load.
+    pkgs.htop    
+    # Adds the 'ponysay' command to your environment.
+    # It prints a My Little Pony character saying somethings.
     (pkgs.ponysay.overrideAttrs { 
       patches = [
         (pkgs.fetchpatch {
@@ -31,6 +35,14 @@
         })
       ];
     })
+    # Text editor.
+    pkgs.emacs
+    # Package manager.
+    pkgs.git
+    # Versatile IDE.
+    # pkgs.vscode
+    # Terminal emulator
+    pkgs.fish
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -53,6 +65,19 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
+
+    # Git setup
+    ".gitignore".source = git/gitignore;
+    ".gitconfig".source = git/gitconfig;
+    ".gitconfig_perso".source = git/gitconfig_perso;
+    ".gitconfig_toward".source = git/gitconfig_toward;
+
+    # Bash
+    ".bashrc".source = bash/bashrc;
+    ".bash_aliases".source = bash/bash_aliases;
+
+    # Fish setup
+    # ".config/fish/functions/fish_prompt.fish".source = fish/fish_prompt.fish;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -78,7 +103,44 @@
   #  /etc/profiles/per-user/mnaveau/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "emacs";
+    EDITOR = "emacs -nw";
+  };
+
+  # shell aliases:
+  home.shellAliases = {
+    gitl = "git plog";
+    gits = "git status";
+  };
+
+  # Activate the fish terminal emulator.
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+    # plugins = [
+    #   # Enable a plugin (here grc for colorized command output) from nixpkgs
+    #   { name = "grc"; src = pkgs.fishPlugins.grc.src; }
+    #   { name = "done"; src = pkgs.fishPlugins.done.src; }
+    #   { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
+    #   { name = "forgit"; src = pkgs.fishPlugins.forgit.src; }
+    #   { name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
+    #   # Manually packaging and enable a plugin
+    #   {
+    #     name = "z";
+    #     src = pkgs.fetchFromGitHub {
+    #       owner = "jethrokuan";
+    #       repo = "z";
+    #       rev = "e0e1b9dfdba362f8ab1ae8c1afc7ccf62b89f7eb";
+    #       sha256 = "0dbnir6jbwjpjalz14snzd3cgdysgcs3raznsijd6savad3qhijc";
+    #     };
+    #   }
+    # ];
+  };
+
+  # Startup fish on all terminal using bash.
+  programs.bash = {
+    initExtra = "fish";
   };
 
   # Let Home Manager install and manage itself.

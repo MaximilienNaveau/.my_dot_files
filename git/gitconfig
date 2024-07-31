@@ -1,0 +1,28 @@
+[filter "lfs"]
+	smudge = git-lfs smudge --skip -- %f
+	process = git-lfs filter-process --skip
+	required = true
+	clean = git-lfs clean -- %f
+[credential]
+	helper = cache --timeout=3600
+[push]
+	default = matching
+[core]
+	editor = emacs -nw
+	excludesfile = "~/.gitignore"
+[alias]
+	log = log --graph --decorate --oneline --abbrev-commit --all
+	logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	plog = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+[url "https://"]
+	insteadOf = git://
+[merge]
+	tool = kdiff3
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[include]
+	path = "~/.gitconfig_perso"
+[includeIf "gitdir:~/devel/devel_pal/**"]
+	path = "~/.gitconfig_toward"

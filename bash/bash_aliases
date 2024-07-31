@@ -1,0 +1,39 @@
+alias gitl='git plog'
+alias gits='git status'
+
+alias cdmemmolocal='cd ~/Documents/cloud_laas/Documents/memmo_project'
+alias cdcloudlaas='cd ~/Documents/cloud_laas/Documents/'
+
+# Activate home printing
+activate_home_printing()
+{
+    sudo rm -f /etc/cups/client.conf
+}
+
+# colcon build and test
+colcon_build_and_test_up_to()
+{
+    colcon build --packages-up-to $1 --cmake-args -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON -DCATKIN_ENABLE_TESTING=ON && colcon test --event-handlers console_direct+ --packages-select $1 && colcon test-result --verbose
+}
+
+colcon_build_and_test()
+{
+    colcon build --packages-select $1 --cmake-args -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON -DCATKIN_ENABLE_TESTING=ON && colcon test --event-handlers console_direct+ --packages-select $1 && colcon test-result --verbose
+}
+
+# Restart docker
+restart_docker()
+{
+    sudo systemctl restart docker.service
+}
+
+docker_exec()
+{
+    if [[ $# -eq 0 ]]
+    then
+        docker exec --workdir=/home/user -u user -it $(docker ps --latest --quiet) bash
+    else
+	docker exec --workdir=$1 -u user -it $(docker ps --latest --quiet) bash
+    fi
+}
+
