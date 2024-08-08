@@ -9,17 +9,17 @@
     # ".screenrc".source = dotfiles/screenrc;
 
     # Git setup
-    ".gitignore".source = "${specialArgs.path_to_dotfiles}/git/gitignore";
-    ".gitconfig".source = "${specialArgs.path_to_dotfiles}/git/gitconfig";
-    ".gitconfig_perso".source = "${specialArgs.path_to_dotfiles}/git/gitconfig_perso";
-    ".gitconfig_toward".source = "${specialArgs.path_to_dotfiles}/git/gitconfig_toward";
+    ".gitignore".source = ./git/gitignore;
+    ".gitconfig".source = ./git/gitconfig;
+    ".gitconfig_perso".source = ./git/gitconfig_perso;
+    ".gitconfig_toward".source = ./git/gitconfig_toward;
 
     # Bash
-    ".bashrc".source = "${specialArgs.path_to_dotfiles}/bash/bashrc";
-    ".bash_aliases".source = "${specialArgs.path_to_dotfiles}/bash/bash_aliases";
+    ".bashrc".source = ./bash/bashrc;
+    ".bash_aliases".source = ./bash/bash_aliases;
 
     # Fish setup
-    # ".config/fish/functions/fish_prompt.fish".source = "${specialArgs.path_to_dotfiles}/fish/fish_prompt.fish";
+    # ".config/fish/functions/fish_prompt.fish".source = "./fish/fish_prompt.fish";
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''

@@ -14,13 +14,14 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, ... }: 
-    let
+  outputs = inputs@{ nixpkgs, home-manager, nixgl, ... }: 
+    let pkgs = import nixpkgs {
       system = "x86_64-linux";
       overlays = [ nixgl.overlay ];
-      pkgs = import nixpkgs {
-        inherit system overlays;
+      config = {
+        allowUnfree = true;
       };
+    };
     in {
       homeConfigurations.mnaveau = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
