@@ -23,13 +23,22 @@
   home.shellAliases = {
     gitl = "git plog";
     gits = "git status";
+    ll = "ls -l";
+    l = "ls";
+    ".." = "cd ..";
+    "..." = "cd ../..";
   };
 
   programs.fish = {
     enable = true;
-    # interactiveShellInit = ''
-    #   set fish_greeting # Disable greeting
-    # '';
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+    shellInit = ''
+      set -x LOCAL_USER_ID (id -u)
+      set -x LOCAL_GROUP_ID (id -g)
+      set -x LOCAL_GROUP_NAME (id -gn)
+    '';
     # plugins = [
     #   # Enable a plugin (here grc for colorized command output) from nixpkgs
     #   { name = "grc"; src = pkgs.fishPlugins.grc.src; }

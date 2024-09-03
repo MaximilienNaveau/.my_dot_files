@@ -64,5 +64,8 @@ in {
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    # Allow one to run github actions locally using docker.
+    pkgs.act
   ];
 }
