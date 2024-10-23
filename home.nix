@@ -1,7 +1,7 @@
 { config, pkgs, specialArgs, lib, ... }:
 {
   targets.genericLinux.enable = true;
-  
+    
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "mnaveau";
   home.homeDirectory = "/home/mnaveau";
@@ -38,6 +38,8 @@
       set -x LOCAL_USER_ID (id -u)
       set -x LOCAL_GROUP_ID (id -g)
       set -x LOCAL_GROUP_NAME (id -gn)
+      fish_add_path ~/.local/bin
+      direnv hook fish | source
     '';
     # plugins = [
     #   # Enable a plugin (here grc for colorized command output) from nixpkgs
