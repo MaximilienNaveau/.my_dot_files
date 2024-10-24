@@ -23,8 +23,9 @@
     let 
       system = "x86_64-linux";
       username = "mnaveau";
+      # pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
     in {
-
       defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
       defaultPackage.x86_64-darwin = home-manager.defaultPackage.x86_64-darwin;
 
@@ -33,10 +34,11 @@
           nix-system-graphics.systemModules.default
           ({
             config = {
-              nixpkgs.hostPlatform = "x86_64-linux";
+              nixpkgs.hostPlatform = "${system}";
               system-manager.allowAnyDistro = true;
               system-graphics.enable = true;
-              # system-graphics.package = nixpkgs.legacyPackages.${system}.linuxPackages.nvidia_x11.override { libsOnly = true; kernel = null; };
+              # system-graphics.package = pkgs.linuxPackages.nvidia_x11.override { libsOnly = true; kernel = null; };
+              system-graphics.package = pkgs.linuxKernel.packages.linux_libre.nvidia_x11_legacy535.override { libsOnly = true; kernel = null; };
             };
           })
         ];
@@ -44,7 +46,7 @@
 
       homeConfigurations = {
         "${username}" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
+          inherit pkgs;
           modules = [ ./home.nix ];
         };
       };
