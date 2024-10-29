@@ -20,7 +20,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, system-manager, nix-system-graphics, ... }:
-    let 
+    let
       system = "x86_64-linux";
       username = "mnaveau";
       # pkgs = nixpkgs.legacyPackages.${system};
@@ -36,18 +36,37 @@
             config = {
               nixpkgs.hostPlatform = "${system}";
               system-manager.allowAnyDistro = true;
-              system-graphics.enable = true;
-              # system-graphics.package = pkgs.linuxPackages.nvidia_x11.override { libsOnly = true; kernel = null; };
-              system-graphics.package = pkgs.linuxKernel.packages.linux_libre.nvidia_x11_legacy535.override { libsOnly = true; kernel = null; };
+              system-graphics = let
+                nvidia-drivers = pkgs.linuxPackages.nvidia_x11_legacy535.override {
+                  libsOnly = true;
+                  kernel = null;
+                };
+              in {
+                enable = true;
+                enable32Bit = true;
+                package = nvidia-drivers;
+                package32 = nvidia-drivers.lib32;
+              };
             };
           })
+        ];
+      };
+
+      devShells."${system}".default = pkgs.mkShellNoCC {
+        packages = [
+          system-manager.packages."${system}".default
         ];
       };
 
       homeConfigurations = {
         "${username}" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./home.nix ];
+          modules = [
+            ./home.nix
+            ({
+              home.packages = [ system-manager.packages."${system}".default ];
+            })
+          ];
         };
       };
     };

@@ -35,7 +35,7 @@ in {
     # Monitor the cpu and memory load.
     pkgs.htop    
     # Adds the 'ponysay' command to your environment.
-    (pkgs.ponysay.overrideAttrs { 
+    (pkgs.ponysay.overrideAttrs {
       patches = [
         (pkgs.fetchpatch {
           url = "https://github.com/erkin/ponysay/pull/313.patch";
@@ -54,7 +54,6 @@ in {
     # pkgs.vscode
 
     # Fancy shell. To activate globally on linux:
-    pkgs.kitty
     pkgs.fish
 
     # It is sometimes useful to fine-tune packages, for example, by applying overrides.
@@ -67,5 +66,7 @@ in {
 
     # Allow one to run github actions locally using docker.
     pkgs.act
+
+    pkgs.glxinfo
   ];
 }
