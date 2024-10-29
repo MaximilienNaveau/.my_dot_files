@@ -37,10 +37,15 @@
               nixpkgs.hostPlatform = "${system}";
               system-manager.allowAnyDistro = true;
               system-graphics = let
-                nvidia-drivers = pkgs.linuxPackages.nvidia_x11_legacy535.override {
-                  libsOnly = true;
-                  kernel = null;
-                };
+                nvidia-drivers = (pkgs.linuxPackages.nvidiaPackages.mkDriver {
+                  version = "535.183.01";
+                  sha256_64bit = "sha256-9nB6+92pQH48vC5RKOYLy82/AvrimVjHL6+11AXouIM=";
+                  sha256_aarch64 = "";
+                  openSha256 = "";
+                  settingsSha256 = "";
+                  persistencedSha256 = "";
+                  patches = pkgs.linuxPackages.nvidiaPackages.legacy_535.patches;
+              }).override { libsOnly = true; kernel = null; };
               in {
                 enable = true;
                 enable32Bit = true;
