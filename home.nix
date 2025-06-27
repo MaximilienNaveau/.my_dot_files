@@ -23,7 +23,7 @@
   home.shellAliases = {
     gitl = "git plog";
     gits = "git status";
-    ll = "ls -l";
+    ll = "ls -al";
     l = "ls";
     ".." = "cd ..";
     "..." = "cd ../..";
@@ -39,6 +39,7 @@
       set -x LOCAL_GROUP_ID (id -g)
       set -x LOCAL_GROUP_NAME (id -gn)
       fish_add_path ~/.local/bin
+      fish_add_path ~/Application/pal_docker_utils/scripts/
       direnv hook fish | source
     '';
     # plugins = [
